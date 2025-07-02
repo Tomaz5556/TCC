@@ -9,7 +9,7 @@ Após a reunião de levantamento de requisitos, protótipos das telas principais
 
 \begin{figure}[htb]
     \centering
-    \caption{Protótipo da Tela inicial}
+    \caption{Protótipo da tela inicial}
     \includegraphics[width=1\textwidth]{Figuras/proto-1.png}
     \caption*{Fonte: AUTOR (2024)}
     \label{fig_proto_1}
@@ -17,7 +17,7 @@ Após a reunião de levantamento de requisitos, protótipos das telas principais
 
 \begin{figure}[H]
     \centering
-    \caption{Protótipo da Tela dos cursos}
+    \caption{Protótipo da tela dos cursos}
     \includegraphics[width=1\textwidth]{Figuras/proto-2.PNG}
     \caption*{Fonte: AUTOR (2024)}
     \label{fig_proto_2}
@@ -25,7 +25,7 @@ Após a reunião de levantamento de requisitos, protótipos das telas principais
 
 \begin{figure}[htb]
     \centering
-    \caption{Protótipo da Tela dos cursos preenchida}
+    \caption{Protótipo da tela dos cursos preenchida}
     \includegraphics[width=1\textwidth]{Figuras/proto-3.PNG}
     \caption*{Fonte: AUTOR (2024)}
     \label{fig_proto_3}
@@ -33,7 +33,7 @@ Após a reunião de levantamento de requisitos, protótipos das telas principais
 
 \begin{figure}[H]
     \centering
-    \caption{Protótipo da Tela dos professores}
+    \caption{Protótipo da tela dos professores}
     \includegraphics[width=1\textwidth]{Figuras/proto-4.PNG}
     \caption*{Fonte: AUTOR (2024)}
     \label{fig_proto_4}
@@ -41,7 +41,7 @@ Após a reunião de levantamento de requisitos, protótipos das telas principais
 
 \begin{figure}[H]
     \centering
-    \caption{Protótipo da Tela das salas}
+    \caption{Protótipo da tela das salas}
     \includegraphics[width=1\textwidth]{Figuras/proto-5.PNG}
     \caption*{Fonte: AUTOR (2024)}
     \label{fig_proto_5}
@@ -259,13 +259,13 @@ A estrutura do front-end está organizada de forma modular, visando clareza, man
 
     \begin{figure}[htb]
         \centering
-        \caption{Tela de Login}
+        \caption{Tela de login com credenciais incorretas}
         \includegraphics[width=0.8\textwidth]{Figuras/front-21.png}
         \caption*{Fonte: AUTOR (2025)}
         \label{fig_front_21}
     \end{figure}
     
-    \item Tela de Validação: exibe os resultados da verificação da planilha de horários, apresentando uma tabela com indicadores de conformidade (SIM ou NÃO) e validando:
+    \item Tela de validação: exibe os resultados da verificação da planilha de horários, apresentando uma tabela com indicadores de conformidade (SIM ou NÃO) e validando:
     \begin{itemize}
         \item a presença das guias Horário - Ensino Médio, Horário - Graduação e Validação de Dados;
         \item a existência dos intervalos de células (B2:V76), (B2:AW106) e (A2:A);
@@ -274,7 +274,7 @@ A estrutura do front-end está organizada de forma modular, visando clareza, man
 
     \begin{figure}[htb]
         \centering
-        \caption{Tela de Validação}
+        \caption{Tela de Validação com resultados}
         \includegraphics[width=1\textwidth]{Figuras/front-22.png}
         \caption*{Fonte: AUTOR (2025)}
         \label{fig_front_22}
@@ -285,12 +285,12 @@ A estrutura do front-end está organizada de forma modular, visando clareza, man
 
 \subsection{Google Sheets como Banco de Dados}
 
-As Figuras \ref{fig_plan_1}, \ref{fig_plan_2}, e \ref{fig_plan_3} apresentam as guias da planilha com os horários acadêmicos para o funcionamento do sistema:
+As Figuras \ref{fig_plan_1}, \ref{fig_plan_2}, e \ref{fig_plan_3} apresentam as guias com a estrutura vital para o correto funcionamento do sistema, contendo os horários acadêmicos e a lista de professores disponíveis.
 
 \begin{figure}[htb]
     \centering
     \caption{Horário - Ensino Médio}
-    \includegraphics[width=1\textwidth]{Figuras/plan-1.png}
+    \includegraphics[width=0.9\textwidth]{Figuras/plan-1.png}
     \caption*{Fonte: AUTOR (2025)}
     \label{fig_plan_1}
 \end{figure}
@@ -303,7 +303,7 @@ As Figuras \ref{fig_plan_1}, \ref{fig_plan_2}, e \ref{fig_plan_3} apresentam as 
 \begin{figure}[htb]
     \centering
     \caption{Horário - Graduação}
-    \includegraphics[width=1\textwidth]{Figuras/plan-2.png}
+    \includegraphics[width=0.9\textwidth]{Figuras/plan-2.png}
     \caption*{Fonte: AUTOR (2025)}
     \label{fig_plan_2}
 \end{figure}
@@ -316,7 +316,7 @@ As Figuras \ref{fig_plan_1}, \ref{fig_plan_2}, e \ref{fig_plan_3} apresentam as 
 \begin{figure}[htb]
     \centering
     \caption{Validação de Dados}
-    \includegraphics[width=1\textwidth]{Figuras/plan-3.png}
+    \includegraphics[width=0.9\textwidth]{Figuras/plan-3.png}
     \caption*{Fonte: AUTOR (2025)}
     \label{fig_plan_3}
 \end{figure}
@@ -331,7 +331,7 @@ A Figura \ref{fig_plan_4} apresenta a guia da planilha com as credenciais de log
 \begin{figure}[htb]
     \centering
     \caption{Login}
-    \includegraphics[width=1\textwidth]{Figuras/plan-4.png}
+    \includegraphics[width=0.9\textwidth]{Figuras/plan-4.png}
     \caption*{Fonte: AUTOR (2025)}
     \label{fig_plan_4}
 \end{figure}
@@ -394,7 +394,7 @@ A estrutura do back-end está organizada seguindo o padrão arquitetural MVC, o 
     \begin{figure}[H]
         \centering
         \caption{Requisição GET do curso Bacharelado em Sistemas de Informação}
-        \includegraphics[width=0.8\textwidth]{Figuras/back-4.png}
+        \includegraphics[width=0.7\textwidth]{Figuras/back-4.png}
         \caption*{Fonte: AUTOR (2025)}
         \label{fig_back_4}
     \end{figure}
@@ -406,17 +406,17 @@ O front-end foi hospedado na plataforma Vercel, permitindo a disponibilização 
 
 \begin{figure}[htb]
     \centering
-    \caption{Vercel}
+    \caption{Deploy do front-end da plataforma na Vercel}
     \includegraphics[width=1\textwidth]{Figuras/deploy-1.png}
     \caption*{Fonte: AUTOR (2025)}
     \label{fig_deploy_1}
 \end{figure}
 
-Já o back-end foi implantado na plataforma Koyeb, responsável por executar a API que processa e envia os dados do Google Sheets ao front-end, conforme ilustrado na Figura \ref{fig_deploy_2}.
+Já o back-end foi hospedado na plataforma Koyeb, responsável por executar a API que processa e envia os dados do Google Sheets ao front-end, conforme ilustrado na Figura \ref{fig_deploy_2}.
 
 \begin{figure}[htb]
     \centering
-    \caption{Koyeb}
+    \caption{Deploy do back-end da plataforma na Koyeb}
     \includegraphics[width=1\textwidth]{Figuras/deploy-2.png}
     \caption*{Fonte: AUTOR (2025)}
     \label{fig_deploy_2}
@@ -424,7 +424,7 @@ Já o back-end foi implantado na plataforma Koyeb, responsável por executar a A
 
 \section{Documentação}
 
-As Figuras \ref{fig_doc_1}, \ref{fig_doc_2} e \ref{fig_doc_3} apresenta a documentação técnica elaborada para a planilha utilizada como banco de dados do sistema. Esse material descreve de forma clara e objetiva as instruções para atualização do identificador da planilha, as regras de preenchimento dos dados e os padrões de nomes e intervalos de células necessários para garantir a integridade do funcionamento da plataforma.
+As Figuras \ref{fig_doc_1}, \ref{fig_doc_2} e \ref{fig_doc_3} apresentam a documentação técnica elaborada para a planilha utilizada como banco de dados do sistema. Esse material descreve de forma clara e objetiva as instruções para atualização do identificador da planilha, as regras de preenchimento dos dados e os padrões de nomes e intervalos de células necessários para garantir a integridade do funcionamento da plataforma.
 
 \begin{figure}[htb]
     \centering
@@ -448,4 +448,12 @@ As Figuras \ref{fig_doc_1}, \ref{fig_doc_2} e \ref{fig_doc_3} apresenta a docume
     \includegraphics[width=1\textwidth]{Figuras/doc-3.png}
     \caption*{Fonte: AUTOR (2025)}
     \label{fig_doc_3}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \caption{Observação sobre mudanças estruturais}
+    \includegraphics[width=1\textwidth]{Figuras/doc-4.png}
+    \caption*{Fonte: AUTOR (2025)}
+    \label{fig_doc_4}
 \end{figure}
