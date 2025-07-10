@@ -175,7 +175,7 @@ Já a Figura \ref{fig_front_9} traz a tela de login para acessar a área de vali
     \label{fig_front_13}
 \end{figure}
 
-Por fim, as Figuras \ref{fig_front_11}, \ref{fig_front_12} e \ref{fig_front_13} ilustram os sistemas externos integrados à plataforma, incluindo a visualização de locais do instituto, o sistema de reserva de horários e o gerenciamento de reservas de salas. Esses sistemas, embora estejam acessíveis a partir da plataforma desenvolvida, não fazem parte do escopo desse trabalho.
+Por fim, as Figuras \ref{fig_front_11}, \ref{fig_front_12} e \ref{fig_front_13} ilustram os sistemas externos integrados à plataforma, incluindo a visualização de locais do instituto, o sistema de reserva de horários e o gerenciamento de reservas de salas. Esses sistemas, embora estejam acessíveis a partir da plataforma desenvolvida, não estão incluídos no escopo desse trabalho.
 
 \subsection{Estrutura do Front-end}
 
@@ -387,7 +387,7 @@ A estrutura do back-end está organizada seguindo o padrão arquitetural MVC, o 
 \subsection{Funcionalidades do Back-end}
 
 \begin{itemize}
-    \item Estabelecer a conexão segura com a API do Google Sheets para coletar os dados das planilhas utilizadas como banco de dados da aplicação. A seguir, será mostrado na Figura \ref{fig_back_2}.
+    \item Estabelecer a conexão segura com a API do Google Sheets para coletar os dados das planilhas utilizadas como banco de dados da aplicação. Essa funcionalidade está implementada na classe SheetsService, exibida a seguir na Figura \ref{fig_back_2}.
     
     \begin{figure}[H]
         \centering
@@ -397,7 +397,24 @@ A estrutura do back-end está organizada seguindo o padrão arquitetural MVC, o 
         \label{fig_back_2}
     \end{figure}
 
-    \item Disponibilizar endpoints REST para consulta de horários de cursos, professores, salas e resultados de validação de dados, assegurando respostas padronizadas e consistentes. Apresentado na Figura \ref{fig_back_3}.
+    A Figura \ref{fig_back_2} mostra a classe SheetsService.java, responsável por estabelecer a comunicação entre o back-end da aplicação e a API do Google Sheets. Essa classe permite que os dados armazenados nas planilhas sejam acessados dinamicamente pela plataforma. A seguir, estão descritas suas principais funcionalidades:
+
+    \begin{itemize}
+        \item Constantes: APPLICATION\_NAME e JSON\_FACTORY são utilizadas para configurar a instância da API do Google Sheets. O nome da aplicação é definido para identificação no console da API, e o JsonFactory especifica o formato de serialização dos dados trafegados entre o back-end e o serviço do Google.
+        \item Construtor SheetsService(): Responsável por configurar a instância do cliente da API do Google Sheets, que é armazenada no atributo sheetsService. Para isso, é utilizada uma conexão segura, criada com GoogleNetHttpTransport, garantindo uma comunicação autenticada e confiável entre o sistema e a API.
+        \item Método getSheetValues(String range): Lê os dados da planilha principal, onde estão os horários acadêmicos, com base no intervalo informado. O método utiliza duas variáveis de ambiente:
+        \begin{itemize}
+            \item EnvConfig.SPREADSHEET\_ID: ID da planilha com os horários acadêmicos.
+            \item EnvConfig.API\_KEY: chave de acesso à API do Google Sheets.
+        \end{itemize}
+        \item Método getSheetValuesLogin(String range): Realiza a leitura de dados da planilha de login, usada na tela de validação de dados. Utiliza como base:
+        \begin{itemize}
+            \item EnvConfig.SPREADSHEET\_LOGIN: ID da planilha com as credenciais de login.
+            \item EnvConfig.API\_KEY: mesma chave usada no método anterior.
+        \end{itemize}
+    \end{itemize}
+
+    \item Disponibilizar endpoints REST para consulta de horários de cursos, professores, salas e resultados de validação de dados, assegurando respostas padronizadas e consistentes. Essa funcionalidade está implementada na classe SheetsController, conforme mostrado na Figura \ref{fig_back_3}.
     
     \begin{figure}[H]
         \centering
@@ -406,13 +423,47 @@ A estrutura do back-end está organizada seguindo o padrão arquitetural MVC, o 
         \caption*{Fonte: AUTOR (2025)}
         \label{fig_back_3}
     \end{figure}
+
+    A Figura \ref{fig_back_3} apresenta a classe SheetsController.java, responsável por fornecer os endpoints REST que permitem o acesso aos dados de horários por meio de requisições HTTP. Cada endpoint é associado a uma funcionalidade específica da plataforma e retorna os dados de forma estruturada, encapsulados no objeto ResponseEntity. A seguir, são descritas as funcionalidades de cada método:
+    \begin{itemize}
+        \item @GetMapping("/ensinoMedio"): Retorna os horários dos cursos técnicos.
+        \begin{itemize}
+            \item Parâmetro: cursoSelecionado (opcional, padrão: "todos") permite filtrar por um curso específico ou exibir todos os cursos.
+            \item Retorno: objeto Horarios contendo os dados formatados para exibição.
+        \end{itemize}
+        \item @GetMapping("/ensinoSuperior"): Retorna os horários dos cursos superiores.
+        \begin{itemize}
+            \item Parâmetro: cursoSelecionado (opcional, padrão: "todos") permite filtrar os horários por curso.
+            \item Retorno: objeto Horarios com os horários organizados conforme o curso selecionado.
+        \end{itemize}
+        \item @GetMapping("/professores"): Retorna os horários dos professores.
+        \begin{itemize}
+            \item Parâmetro: professorSelecionado (opcional) exibe apenas os horários de um professor específico, caso informado.
+            \item Retorno: objeto Horarios com os horários vinculados ao professor selecionado.
+        \end{itemize}
+        \item @GetMapping("/salas"): Retorna os horários de ocupação das salas.
+        \begin{itemize}
+            \item Parâmetro: salaSelecionada (opcional) permite consultar os horários de uma sala específica.
+            \item Retorno: objeto Horarios com os dados das salas ocupadas em cada turno e dia.
+        \end{itemize}
+        \item @GetMapping("/login"): Valida as credenciais de acesso informadas.
+        \begin{itemize}
+            \item Parâmetros obrigatórios: usuario e senha.
+            \item Retorno: mensagem de autenticação com status 200 se for bem-sucedida, ou 401 (não autorizado) caso as credenciais estejam incorretas.
+        \end{itemize}
+        \item @GetMapping("/validacao"): Retorna os resultados da validação dos dados da planilha de horários.
+        \begin{itemize}
+            \item Parâmetros: nenhum.
+            \item Retorno: objeto Horarios contendo possíveis inconsistências ou erros identificados durante o processo de validação dos dados.
+        \end{itemize}
+    \end{itemize}
 \end{itemize}
 
 \section{Deploy}
 
 O front-end foi hospedado na plataforma Vercel, permitindo a disponibilização da interface do usuário com alta performance e integração contínua, como mostrado na Figura \ref{fig_deploy_1}.
 
-\begin{figure}[htb]
+\begin{figure}[H]
     \centering
     \caption{Deploy do front-end da plataforma na Vercel}
     \includegraphics[width=1\textwidth]{Figuras/deploy-1.png}
