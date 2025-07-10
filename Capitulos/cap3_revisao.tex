@@ -94,7 +94,7 @@ O uso de planilhas em nuvem como forma de armazenamento de dados para aplicaçõ
 
 Adotar essa estratégia pode ser vantajoso devido à interface web simples, porém eficaz e já bem conhecida para gerenciamento de dados. As planilhas suportam operações de inserção, atualização e exclusão, que precisariam ser implementadas para a gestão dos registros. Além disso, por serem projetadas para colaboração, essas ferramentas oferecem recursos fáceis de gerenciamento de acesso, permitindo conceder permissões de leitura e escrita \cite{schwertnercharao:hal-02119998}.
 
-Uma desvantagem dessa abordagem está relacionada aos limites impostos pelo provedor de serviços em nuvem. Isso afeta até mesmo os planos pagos, de forma que a escalabilidade tende a ser comprometida. Além disso, o desempenho pode ser um problema, já que as transferências de dados podem ser demoradas e não há garantias quanto a isso \cite{schwertnercharao:hal-02119998}.
+Apesar dessas vantagens, essa abordagem apresenta limitações importantes. Há um controle limitado sobre a integridade e o formato dos dados, dificultando a padronização das informações. Outro ponto crítico é a propensão a erros humanos, como sobrescrever células por engano ou registrar dados em estruturas inconsistentes, comprometendo a confiabilidade do sistema \cite{wisconsin2020}.
 
 Considerando que muitas soluções para gerenciamento de banco de dados exigem hospedagem paga, isso pode se tornar inacessível para projetos estudantis ou pessoais. Nesse contexto, as planilhas surgem como uma alternativa funcional para o armazenamento e a manipulação de dados \cite{ufsm2024}.
 
@@ -102,7 +102,6 @@ Considerando que muitas soluções para gerenciamento de banco de dados exigem h
 
 \begin{itemize}
     \item \textbf{Java}: É uma linguagem de programação orientada a objetos e plataforma de desenvolvimento de software. Tem como uma de suas principais características o fato de ser multiplataforma, ou seja, um mesmo código escrito em \textit{Java} pode ser executado em diferentes plataformas e sistemas operacionais, bastando que a máquina possua a \textit{JVM} (\textit{Java Virtual Machine}) instalada, sendo apenas uma parte que está envolvida na execução de um aplicativo \cite{Java2025}.
-    \item \textbf{Frameworks do lado do servidor}: Oferecem ferramentas e estruturas para desenvolver rapidamente aplicativos web confiáveis e escaláveis, como Spring, Express, Laravel, ASP.NET, Ruby on Rails e Django. Esses \textit{frameworks} fornecem recursos como roteamento, autenticação, acesso a banco de dados e manipulação de requisições HTTP, auxiliando no processo de desenvolvimento \cite{santiago2020desenvolvimento}.
     \item \textbf{Spring}: É um \textit{framework} que simplifica o desenvolvimento de software em \textit{Java}, destacando-se por ser altamente configurável e por suportar variados tipos de arquiteturas, já que é dividido em módulos que podem ser usados de acordo com as necessidades da aplicação \cite{Spring2025}.
     \item \textbf{Spring Boot}: É um dos módulos construídos sobre o \textit{Spring Framework}. Ao utilizá-lo, a configuração de aplicações \textit{Spring}\footnote{https://spring.io/quickstart} é facilitada para o desenvolvedor, pois realiza configurações de forma automática. Dessa forma, o desenvolvedor pode direcionar sua atenção mais para as regras de negócio e menos para configurações de projeto, ajudando assim a acelerar o processo de desenvolvimento \cite{SpringBoot2025}.
     \item \textbf{Google Sheets}: É um aplicativo de planilhas online que permite a criação, formatação e edição de arquivos de forma colaborativa. Embora frequentemente associado à criação de planilhas, o \textit{Google Sheets}\footnote{https://docs.google.com/spreadsheets} também pode ser uma alternativa funcional para o armazenamento e a manipulação de dados \cite{ufsm2024}.
@@ -145,28 +144,6 @@ A conexão entre \textit{front-end} e \textit{back-end} é um aspecto fundamenta
     \item \textbf{Autenticação e autorização}: Em muitas aplicações, geralmente é necessário fornecer mecanismos para que o cliente possa se identificar. A partir desta identificação, o servidor checa se as credenciais fornecidas são válidas e quais direitos estas credenciais dão a ele. Estes procedimentos recebem o nome de autenticação, onde é o cliente fornecendo credenciais válidas e autorização, onde o servidor checando quais direitos o cliente tem \cite{oliveira2014desenvolvimento}.
     \item \textbf{JSON (\textit{JavaScript Object Notation})}: É um formato leve de troca de dados que é fácil para os humanos lerem e escreverem, e fácil para as máquinas analisarem e gerarem. É baseado em formato de texto e completamente independente de linguagem, pois usa convenções que são familiares às linguagens C e muitas outras. Essas propriedades tornam este um formato ideal para transmissão de dados em aplicações web \cite{json2025}.
 \end{itemize}
-
-\subsubsection{Testes}
-
-Os testes envolvem todas as atividades realizadas pela equipe de desenvolvimento do sistema para descobrir bugs e defeitos. Segundo \citeonline{sommerville2011engenharia}, esse processo tem dois objetivos distintos:
-
-\begin{itemize}
-    \item Demonstrar ao desenvolvedor e ao cliente que o software atende a seus requisitos.
-    \item Descobrir situações em que o software se comporta de maneira incorreta, indesejável ou de forma diferente das especiﬁcações.
-\end{itemize}
-
-No entanto, é importante destacar que essa prática não garante que o software esteja livre de erros ou que funcionará corretamente em qualquer situação. É possível que um teste esquecido seja aquele que poderia descobrir mais problemas no sistema. Dessa forma, os testes podem mostrar apenas a presença de erros, e não sua ausência \cite{sommerville2011engenharia}.
-
-O teste é parte de um amplo processo de verificação e validação (V\&V). Embora os termos sejam frequentemente confundidos, possuem objetivos distintos. A verificação consiste em checar se o software atende aos seus requisitos, enquanto a validação busca garantir que o software atenda às expectativas do cliente \cite{sommerville2011engenharia}.
-
-Durante o desenvolvimento, o teste pode ocorrer em três níveis principais:
-\begin{enumerate}
-    \item Teste unitário: foca em testar a funcionalidade dos objetos ou métodos.
-    \item Teste de componentes: visa testar as interfaces dos componentes.
-    \item Teste de sistema: busca testar as interações entre os componentes.
-\end{enumerate}
-
-Testes são essencialmente um processo de teste de defeitos, em que o objetivo é descobrir bugs no software. Normalmente, são intercalados com a depuração, sendo o processo de identificar e corrigir problemas encontrados no código do programa \cite{sommerville2011engenharia}.
 
 \subsubsection{Avaliação de Software}
 
