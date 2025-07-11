@@ -400,17 +400,17 @@ A estrutura do back-end está organizada seguindo o padrão arquitetural MVC, o 
     A Figura \ref{fig_back_2} mostra a classe SheetsService.java, responsável por estabelecer a comunicação entre o back-end da aplicação e a API do Google Sheets. Essa classe permite que os dados armazenados nas planilhas sejam acessados dinamicamente pela plataforma. A seguir, estão descritas suas principais funcionalidades:
 
     \begin{itemize}
-        \item Constantes: APPLICATION\_NAME e JSON\_FACTORY são utilizadas para configurar a instância da API do Google Sheets. O nome da aplicação é definido para identificação no console da API, e o JsonFactory especifica o formato de serialização dos dados trafegados entre o back-end e o serviço do Google.
-        \item Construtor SheetsService(): Responsável por configurar a instância do cliente da API do Google Sheets, que é armazenada no atributo sheetsService. Para isso, é utilizada uma conexão segura, criada com GoogleNetHttpTransport, garantindo uma comunicação autenticada e confiável entre o sistema e a API.
-        \item Método getSheetValues(String range): Lê os dados da planilha principal, onde estão os horários acadêmicos, com base no intervalo informado. O método utiliza duas variáveis de ambiente:
+        \item \textbf{Constantes}: APPLICATION\_NAME e JSON\_FACTORY são utilizadas para configurar a instância da API do Google Sheets. O nome da aplicação é definido para identificação no console da API, e o JsonFactory especifica o formato de serialização dos dados trafegados entre o back-end e o serviço do Google.
+        \item \textbf{Construtor SheetsService()}: Responsável por configurar a instância do cliente da API do Google Sheets, que é armazenada no atributo sheetsService. Para isso, é utilizada uma conexão segura, criada com GoogleNetHttpTransport, garantindo uma comunicação autenticada e confiável entre o sistema e a API.
+        \item \textbf{Método getSheetValues(String range)}: Lê os dados da planilha principal, onde estão os horários acadêmicos, com base no intervalo informado. O método utiliza duas variáveis de ambiente:
         \begin{itemize}
-            \item EnvConfig.SPREADSHEET\_ID: ID da planilha com os horários acadêmicos.
-            \item EnvConfig.API\_KEY: chave de acesso à API do Google Sheets.
+            \item \textit{EnvConfig.SPREADSHEET\_ID}: ID da planilha com os horários acadêmicos.
+            \item \textit{EnvConfig.API\_KEY}: chave de acesso à API do Google Sheets.
         \end{itemize}
-        \item Método getSheetValuesLogin(String range): Realiza a leitura de dados da planilha de login, usada na tela de validação de dados. Utiliza como base:
+        \item \textbf{Método getSheetValuesLogin(String range)}: Realiza a leitura de dados da planilha de login, usada na tela de validação de dados. Utiliza como base:
         \begin{itemize}
-            \item EnvConfig.SPREADSHEET\_LOGIN: ID da planilha com as credenciais de login.
-            \item EnvConfig.API\_KEY: mesma chave usada no método anterior.
+            \item \textit{EnvConfig.SPREADSHEET\_LOGIN}: ID da planilha com as credenciais de login.
+            \item \textit{EnvConfig.API\_KEY}: mesma chave usada no método anterior.
         \end{itemize}
     \end{itemize}
 
@@ -424,7 +424,7 @@ A estrutura do back-end está organizada seguindo o padrão arquitetural MVC, o 
         \label{fig_back_3}
     \end{figure}
 
-    O objetivo do endpoint é retornar os horários dos cursos técnicos. O parâmetro utilizado é cursoSelecionado, que é opcional e, por padrão, assume o valor "todos". Tendo isso como referência, o sistema consulta os dados na planilha e os retorna de forma organizada dentro de um objeto Horarios, como ilustrado na Figura \ref{fig_back_3}. As informações retornadas incluem os horários de todos os cursos técnicos ou de um curso técnico específico.
+    O objetivo do endpoint apresentado na Figura \ref{fig_back_3} é retornar os horários dos cursos técnicos. O parâmetro utilizado é cursoSelecionado, que é opcional e, por padrão, assume o valor "todos". Tendo isso como referência, o sistema consulta os dados na planilha e os retorna de forma organizada dentro de um objeto Horarios com os horários de todos os cursos técnicos ou de um curso técnico específico.
 
     \begin{figure}[htb]
         \centering
@@ -434,7 +434,7 @@ A estrutura do back-end está organizada seguindo o padrão arquitetural MVC, o 
         \label{fig_back_4}
     \end{figure}
 
-    O objetivo do endpoint é retornar os horários dos cursos superiores. O parâmetro utilizado é cursoSelecionado, que é opcional e, por padrão, assume o valor "todos". Tendo isso como referência, o sistema consulta os dados na planilha e os retorna de forma organizada dentro de um objeto Horarios, como ilustrado na Figura \ref{fig_back_4}. As informações retornadas incluem os horários de todos os cursos superiores ou de um curso superior específico.
+    O objetivo do endpoint apresentado na Figura \ref{fig_back_4} é retornar os horários dos cursos superiores. O parâmetro utilizado é cursoSelecionado, que é opcional e, por padrão, assume o valor "todos". Tendo isso como referência, o sistema consulta os dados na planilha e os retorna de forma organizada dentro de um objeto Horarios com os horários de todos os cursos superiores ou de um curso superior específico.
 
     \begin{figure}[htb]
         \centering
@@ -444,7 +444,7 @@ A estrutura do back-end está organizada seguindo o padrão arquitetural MVC, o 
         \label{fig_back_5}
     \end{figure}
 
-    O objetivo do endpoint é retornar os horários dos professores. O parâmetro utilizado é professorSelecionado, que é opcional e, por padrão, pode ser deixado em branco. Tendo isso como referência, o sistema consulta os dados na planilha e os retorna de forma organizada dentro de um objeto Horarios, como ilustrado na Figura \ref{fig_back_5}. As informações retornadas incluem os horários de um professor específico.
+    Conforme ilustrado na Figura \ref{fig_back_5}, o objetivo do endpoint é retornar os horários dos professores. O parâmetro professorSelecionado é opcional e pode ser deixado em branco. Com base nisso, o sistema consulta os dados na planilha e os retorna de forma organizada dentro de um objeto Horarios com os horários de um professor específico.
 
     \begin{figure}[htb]
         \centering
@@ -454,7 +454,7 @@ A estrutura do back-end está organizada seguindo o padrão arquitetural MVC, o 
         \label{fig_back_6}
     \end{figure}
 
-    O objetivo do endpoint é retornar os horários de ocupação das salas. O parâmetro utilizado é salaSelecionada, que é opcional e, por padrão, pode ser deixado em branco. Tendo isso como referência, o sistema consulta os dados na planilha e os retorna de forma organizada dentro de um objeto Horarios, como ilustrado na Figura \ref{fig_back_6}. As informações retornadas incluem os horários de ocupação de uma sala específica.
+    Conforme ilustrado na Figura \ref{fig_back_6}, o objetivo do endpoint é retornar os horários de ocupação das salas. O parâmetro salaSelecionada é opcional e pode ser deixado em branco. Com base nisso, o sistema consulta os dados na planilha e os retorna de forma organizada dentro de um objeto Horarios com os horários de ocupação de uma sala específica.
 
     \begin{figure}[htb]
         \centering
@@ -464,7 +464,7 @@ A estrutura do back-end está organizada seguindo o padrão arquitetural MVC, o 
         \label{fig_back_7}
     \end{figure}
 
-    O objetivo do endpoint é validar as credenciais de acesso informadas. Os parâmetros obrigatórios são usuario e senha. Com essas informações, o sistema realiza a autenticação e retorna uma mensagem com o status correspondente, sendo 200 em caso de sucesso ou 401 não autorizado caso as credenciais estejam incorretas, como ilustrado na Figura \ref{fig_back_7}.
+    Como mostrado na Figura \ref{fig_back_7}, o objetivo do endpoint é validar as credenciais de acesso informadas. Os parâmetros obrigatórios são usuario e senha. Com essas informações, o sistema realiza a autenticação e retorna uma mensagem com o status correspondente, sendo 200 em caso de sucesso ou 401 não autorizado caso as credenciais estejam incorretas.
 
     \begin{figure}[H]
         \centering
@@ -474,7 +474,7 @@ A estrutura do back-end está organizada seguindo o padrão arquitetural MVC, o 
         \label{fig_back_8}
     \end{figure}
 
-    O objetivo do endpoint é retornar os resultados da validação dos dados da planilha de horários. Nenhum parâmetro é necessário para a execução da requisição. Ao ser acionado, o sistema analisa a planilha e responde com um objeto Horarios contendo eventuais inconsistências ou erros detectados durante o processo de validação, conforme mostrado na Figura \ref{fig_back_8}.
+    Conforme mostrado na Figura \ref{fig_back_8}, o objetivo do endpoint é retornar os resultados da validação dos dados da planilha de horários. Nenhum parâmetro é necessário para a execução da requisição. Ao ser acionado, o sistema analisa a planilha e responde com um objeto Horarios contendo eventuais inconsistências ou erros detectados durante o processo de validação.
 \end{itemize}
 
 \section{Deploy}
