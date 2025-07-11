@@ -414,49 +414,67 @@ A estrutura do back-end está organizada seguindo o padrão arquitetural MVC, o 
         \end{itemize}
     \end{itemize}
 
-    \item Disponibilizar endpoints REST para consulta de horários de cursos, professores, salas e resultados de validação de dados, assegurando respostas padronizadas e consistentes. Essa funcionalidade está implementada na classe SheetsController, conforme mostrado na Figura \ref{fig_back_3}.
-    
-    \begin{figure}[H]
+    \item Disponibilizar endpoints REST para consulta de horários de cursos, professores, salas e resultados de validação de dados, assegurando respostas padronizadas e consistentes. Essa funcionalidade é implementada na classe SheetsController, que organiza e define as rotas de acesso dos dados. As rotas são definidas exclusivamente com o método GET, uma vez que o sistema realiza apenas operações de leitura, sem modificar os dados. Cada rota é mapeada para um método específico do controller, responsável por retornar as informações de forma estruturada por meio do objeto ResponseEntity. A seguir, são descritos os principais endpoints da aplicação.
+
+    \begin{figure}[htb]
         \centering
-        \caption{SheetsController.java}
+        \caption{Endpoint de consulta dos horários dos cursos técnicos}
         \includegraphics[width=1\textwidth]{Figuras/back-3.png}
         \caption*{Fonte: AUTOR (2025)}
         \label{fig_back_3}
     \end{figure}
 
-    A Figura \ref{fig_back_3} apresenta a classe SheetsController.java, responsável por fornecer os endpoints REST que permitem o acesso aos dados de horários por meio de requisições HTTP. Cada endpoint é associado a uma funcionalidade específica da plataforma e retorna os dados de forma estruturada, encapsulados no objeto ResponseEntity. A seguir, são descritas as funcionalidades de cada método:
-    \begin{itemize}
-        \item @GetMapping("/ensinoMedio"): Retorna os horários dos cursos técnicos.
-        \begin{itemize}
-            \item Parâmetro: cursoSelecionado (opcional, padrão: "todos") permite filtrar por um curso específico ou exibir todos os cursos.
-            \item Retorno: objeto Horarios contendo os dados formatados para exibição.
-        \end{itemize}
-        \item @GetMapping("/ensinoSuperior"): Retorna os horários dos cursos superiores.
-        \begin{itemize}
-            \item Parâmetro: cursoSelecionado (opcional, padrão: "todos") permite filtrar os horários por curso.
-            \item Retorno: objeto Horarios com os horários organizados conforme o curso selecionado.
-        \end{itemize}
-        \item @GetMapping("/professores"): Retorna os horários dos professores.
-        \begin{itemize}
-            \item Parâmetro: professorSelecionado (opcional) exibe apenas os horários de um professor específico, caso informado.
-            \item Retorno: objeto Horarios com os horários vinculados ao professor selecionado.
-        \end{itemize}
-        \item @GetMapping("/salas"): Retorna os horários de ocupação das salas.
-        \begin{itemize}
-            \item Parâmetro: salaSelecionada (opcional) permite consultar os horários de uma sala específica.
-            \item Retorno: objeto Horarios com os dados das salas ocupadas em cada turno e dia.
-        \end{itemize}
-        \item @GetMapping("/login"): Valida as credenciais de acesso informadas.
-        \begin{itemize}
-            \item Parâmetros obrigatórios: usuario e senha.
-            \item Retorno: mensagem de autenticação com status 200 se for bem-sucedida, ou 401 (não autorizado) caso as credenciais estejam incorretas.
-        \end{itemize}
-        \item @GetMapping("/validacao"): Retorna os resultados da validação dos dados da planilha de horários.
-        \begin{itemize}
-            \item Parâmetros: nenhum.
-            \item Retorno: objeto Horarios contendo possíveis inconsistências ou erros identificados durante o processo de validação dos dados.
-        \end{itemize}
-    \end{itemize}
+    O objetivo do endpoint é retornar os horários dos cursos técnicos. O parâmetro utilizado é cursoSelecionado, que é opcional e, por padrão, assume o valor "todos". Tendo isso como referência, o sistema consulta os dados na planilha e os retorna de forma organizada dentro de um objeto Horarios, como ilustrado na Figura \ref{fig_back_3}. As informações retornadas incluem os horários de todos os cursos técnicos ou de um curso técnico específico.
+
+    \begin{figure}[htb]
+        \centering
+        \caption{Endpoint de consulta dos horários dos cursos superiores}
+        \includegraphics[width=1\textwidth]{Figuras/back-4.png}
+        \caption*{Fonte: AUTOR (2025)}
+        \label{fig_back_4}
+    \end{figure}
+
+    O objetivo do endpoint é retornar os horários dos cursos superiores. O parâmetro utilizado é cursoSelecionado, que é opcional e, por padrão, assume o valor "todos". Tendo isso como referência, o sistema consulta os dados na planilha e os retorna de forma organizada dentro de um objeto Horarios, como ilustrado na Figura \ref{fig_back_4}. As informações retornadas incluem os horários de todos os cursos superiores ou de um curso superior específico.
+
+    \begin{figure}[htb]
+        \centering
+        \caption{Endpoint de consulta dos horários dos professores}
+        \includegraphics[width=1\textwidth]{Figuras/back-5.png}
+        \caption*{Fonte: AUTOR (2025)}
+        \label{fig_back_5}
+    \end{figure}
+
+    O objetivo do endpoint é retornar os horários dos professores. O parâmetro utilizado é professorSelecionado, que é opcional e, por padrão, pode ser deixado em branco. Tendo isso como referência, o sistema consulta os dados na planilha e os retorna de forma organizada dentro de um objeto Horarios, como ilustrado na Figura \ref{fig_back_5}. As informações retornadas incluem os horários de um professor específico.
+
+    \begin{figure}[htb]
+        \centering
+        \caption{Endpoint de consulta dos horários de ocupação das salas}
+        \includegraphics[width=1\textwidth]{Figuras/back-6.png}
+        \caption*{Fonte: AUTOR (2025)}
+        \label{fig_back_6}
+    \end{figure}
+
+    O objetivo do endpoint é retornar os horários de ocupação das salas. O parâmetro utilizado é salaSelecionada, que é opcional e, por padrão, pode ser deixado em branco. Tendo isso como referência, o sistema consulta os dados na planilha e os retorna de forma organizada dentro de um objeto Horarios, como ilustrado na Figura \ref{fig_back_6}. As informações retornadas incluem os horários de ocupação de uma sala específica.
+
+    \begin{figure}[htb]
+        \centering
+        \caption{Endpoint de consulta das permissões para ver validação da planiha}
+        \includegraphics[width=1\textwidth]{Figuras/back-7.png}
+        \caption*{Fonte: AUTOR (2025)}
+        \label{fig_back_7}
+    \end{figure}
+
+    O objetivo do endpoint é validar as credenciais de acesso informadas. Os parâmetros obrigatórios são usuario e senha. Com essas informações, o sistema realiza a autenticação e retorna uma mensagem com o status correspondente, sendo 200 em caso de sucesso ou 401 não autorizado caso as credenciais estejam incorretas, como ilustrado na Figura \ref{fig_back_7}.
+
+    \begin{figure}[H]
+        \centering
+        \caption{Endpoint de consulta para validar dados da planilha}
+        \includegraphics[width=1\textwidth]{Figuras/back-8.png}
+        \caption*{Fonte: AUTOR (2025)}
+        \label{fig_back_8}
+    \end{figure}
+
+    O objetivo do endpoint é retornar os resultados da validação dos dados da planilha de horários. Nenhum parâmetro é necessário para a execução da requisição. Ao ser acionado, o sistema analisa a planilha e responde com um objeto Horarios contendo eventuais inconsistências ou erros detectados durante o processo de validação, conforme mostrado na Figura \ref{fig_back_8}.
 \end{itemize}
 
 \section{Deploy}
