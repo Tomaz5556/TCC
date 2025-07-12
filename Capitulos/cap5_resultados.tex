@@ -57,7 +57,7 @@ A Figura \ref{fig_proto_5} apresenta o protótipo da tela das salas, exibindo os
 
 \subsection{Desenvolvimento do Front-end}
 
-O front-end foi desenvolvido com o Next.js. Essa tecnologia possibilitou criar uma interface moderna e eficiente, capaz de responder dinamicamente a eventos e mudanças de estado, garantindo uma experiência de usuário fluida e responsiva. Todo o trabalho priorizou clareza na organização dos componentes, reutilização de elementos e facilidade de futuras evoluções, atendendo às necessidades do projeto com agilidade. O código está disponível no repositório do projeto em \url{https://github.com/Tomaz5556/Horarios-IFNMG-Salinas}. A seguir, são exibidas as telas resultantes desse processo:
+O front-end foi desenvolvido com o Next.js. Essa tecnologia possibilitou criar uma interface moderna e eficiente, capaz de responder dinamicamente a eventos e mudanças de estado, garantindo uma experiência de usuário fluida e responsiva. Todo o trabalho priorizou clareza na organização dos componentes, reutilização de elementos e facilidade de futuras evoluções, atendendo às necessidades do projeto com agilidade. O código está disponível no repositório do projeto em \url{https://github.com/Tomaz5556/Horarios-IFNMG-Salinas/tree/main/frontend}. A seguir, são exibidas as telas resultantes desse processo:
 
 \begin{figure}[htb]
     \centering
@@ -184,7 +184,7 @@ A estrutura do front-end está organizada de forma modular, visando clareza, man
 \begin{figure}[htb]
     \centering
     \caption{Estrutura do front-end}
-    \includegraphics[width=0.25\textwidth]{Figuras/front-14.png}
+    \includegraphics[width=0.3\textwidth]{Figuras/front-14.png}
     \caption*{Fonte: AUTOR (2025)}
     \label{fig_front_14}
 \end{figure}
@@ -213,7 +213,7 @@ A estrutura do front-end está organizada de forma modular, visando clareza, man
 \subsection{Funcionalidades do Front-end}
 
 \begin{itemize}
-    \item Modo escuro: adapta automaticamente o tema da aplicação (claro ou escuro) de acordo com a configuração do navegador, oferecendo maior conforto visual aos usuários. A seguir, será mostrado na Figura \ref{fig_front_15}.
+    \item Modo escuro: adapta automaticamente o tema da aplicação entre claro ou escuro, de acordo com a configuração do navegador, oferecendo maior conforto visual aos usuários. Conforme mostrado na Figura \ref{fig_front_15}.
 
     \begin{figure}[H]
         \centering
@@ -223,7 +223,7 @@ A estrutura do front-end está organizada de forma modular, visando clareza, man
         \label{fig_front_15}
     \end{figure}
 
-    \item Responsividade: garante que a interface funcione bem tanto em dispositivos móveis quanto em desktops, mantendo a usabilidade e a organização dos elementos. Ver Figura \ref{fig_front_16}.
+    \item Responsividade: garante que a interface funcione bem tanto em dispositivos móveis quanto em desktops, mantendo a usabilidade e a organização dos elementos. Conforme mostrado na Figura \ref{fig_front_16}.
 
     \begin{figure}[H]
         \centering
@@ -238,37 +238,37 @@ A estrutura do front-end está organizada de forma modular, visando clareza, man
     \begin{figure}[htb]
         \centering
         \caption{Busca de horários de cursos}
-        \includegraphics[width=0.6\textwidth]{Figuras/front-17.png}
+        \includegraphics[width=0.7\textwidth]{Figuras/front-17.png}
         \caption*{Fonte: AUTOR (2025)}
         \label{fig_front_17}
     \end{figure}
     
-    \item Busca de horários de professores: permite selecionar um professor em uma lista suspensa e visualizar seus horários semanais completos. Ilustrado na Figura \ref{fig_front_18}.
+    \item Busca de horários de professores: permite selecionar um professor em uma lista suspensa e visualizar os horários de segunda a sexta-feira. Ilustrado na Figura \ref{fig_front_18}.
 
     \begin{figure}[H]
         \centering
         \caption{Busca de horários de professores}
-        \includegraphics[width=0.2\textwidth]{Figuras/front-18.png}
+        \includegraphics[width=0.25\textwidth]{Figuras/front-18.png}
         \caption*{Fonte: AUTOR (2025)}
         \label{fig_front_18}
     \end{figure}
     
-    \item Busca de horários de salas: possibilita selecionar uma sala em uma lista suspensa e consultar os horários de ocupação de segunda a sexta-feira. Mostrado na Figura \ref{fig_front_19}.
+    \item Busca de horários de salas: permite selecionar uma sala em uma lista suspensa e visualizar os horários de ocupação de segunda a sexta-feira. Conforme mostrado na Figura \ref{fig_front_19}.
 
     \begin{figure}[htb]
         \centering
         \caption{Busca de horários de salas}
-        \includegraphics[width=0.3\textwidth]{Figuras/front-19.png}
+        \includegraphics[width=0.25\textwidth]{Figuras/front-19.png}
         \caption*{Fonte: AUTOR (2025)}
         \label{fig_front_19}
     \end{figure}
     
-    \item Download em pdf: permite exportar e salvar as tabelas de horários no formato PDF, facilitando o acesso offline. A seguir, será mostrado na Figura \ref{fig_front_20}.
+    \item Download em PDF: permite o usuário salvar a tabela dos horários em um arquivo no formato PDF, facilitando o acesso offline às informações. Conforme mostrado na Figura \ref{fig_front_20}.
 
     \begin{figure}[htb]
         \centering
-        \caption{Download em pdf}
-        \includegraphics[width=0.8\textwidth]{Figuras/front-20.png}
+        \caption{Download em PDF}
+        \includegraphics[width=0.9\textwidth]{Figuras/front-20.png}
         \caption*{Fonte: AUTOR (2025)}
         \label{fig_front_20}
     \end{figure}
@@ -303,7 +303,7 @@ A estrutura do front-end está organizada de forma modular, visando clareza, man
 
 \subsection{Google Sheets como Banco de Dados}
 
-As Figuras \ref{fig_plan_1}, \ref{fig_plan_2}, e \ref{fig_plan_3} apresentam as guias com a estrutura vital para o correto funcionamento do sistema, contendo os horários acadêmicos e a lista de professores disponíveis.
+O sistema utiliza duas planilhas hospedadas no Google Sheets. A primeira planilha contém duas guias com os horários acadêmicos e a uma guia com a lista dos professores disponíveis, conforme apresentado a seguir:
 
 \begin{figure}[htb]
     \centering
@@ -313,10 +313,7 @@ As Figuras \ref{fig_plan_1}, \ref{fig_plan_2}, e \ref{fig_plan_3} apresentam as 
     \label{fig_plan_1}
 \end{figure}
 
-\begin{itemize}
-    \item \textbf{Intervalo de células}: B2:V76
-    \item \textbf{Descrição}: Contém os horários das turmas dos cursos técnicos.
-\end{itemize}
+A Figura \ref{fig_plan_1} mostra a guia que contém os horários das turmas dos cursos técnicos, distribuídos no intervalo de células B2:V76.
 
 \begin{figure}[htb]
     \centering
@@ -326,10 +323,7 @@ As Figuras \ref{fig_plan_1}, \ref{fig_plan_2}, e \ref{fig_plan_3} apresentam as 
     \label{fig_plan_2}
 \end{figure}
 
-\begin{itemize}
-    \item \textbf{Intervalo de células}: B2:AW106
-    \item \textbf{Descrição}: Contém os horários das turmas dos cursos superiores.
-\end{itemize}
+A Figura \ref{fig_plan_2} mostra a guia que contém os horários das turmas dos cursos superiores, distribuídos no intervalo de células B2:AW106.
 
 \begin{figure}[htb]
     \centering
@@ -339,14 +333,11 @@ As Figuras \ref{fig_plan_1}, \ref{fig_plan_2}, e \ref{fig_plan_3} apresentam as 
     \label{fig_plan_3}
 \end{figure}
 
-\begin{itemize}
-    \item \textbf{Intervalo de células}: A2:A
-    \item \textbf{Descrição}: Reúne a lista de professores da instituição.
-\end{itemize}
+A Figura \ref{fig_plan_3}, mostra a guia que reúne a lista de professores da instituição, distribuídos no intervalo de células A2:A.
 
-A Figura \ref{fig_plan_4} apresenta a guia da planilha com as credenciais de login para acessar a tela de validação de dados:
+A segunda planilha contém uma guia com as credenciais de login necessárias para autenticação:
 
-\begin{figure}[htb]
+\begin{figure}[H]
     \centering
     \caption{Login}
     \includegraphics[width=0.9\textwidth]{Figuras/plan-4.png}
@@ -354,14 +345,11 @@ A Figura \ref{fig_plan_4} apresenta a guia da planilha com as credenciais de log
     \label{fig_plan_4}
 \end{figure}
 
-\begin{itemize}
-    \item \textbf{Intervalo de células}: B1:B2
-    \item \textbf{Descrição}: Contém as credenciais de usuário e senha para acessar a tela de validação de dados.
-\end{itemize}
+A Figura \ref{fig_plan_4} mostra a guia da planilha com as credenciais de login para acessar a tela de validação de dados, contendo os campos de usuário e senha, distribuídos no intervalo de células B1:B2.
 
 \subsection{Desenvolvimento do Back-end}
 
-O back-end foi desenvolvido utilizando o framework Spring Boot, escolhido por sua robustez, flexibilidade e ampla adoção no mercado. Essa tecnologia possibilitou integrar de forma segura a API do Google Sheets, garantindo a leitura dos dados necessários para o funcionamento da plataforma e enviando essas informações ao front-end de maneira estruturada e confiável. Todo o processo priorizou simplicidade na configuração e facilidade de manutenção, permitindo atender às demandas do projeto com agilidade. O código está disponível no repositório do projeto em \url{https://github.com/Tomaz5556/Horarios-IFNMG-Salinas}.
+O back-end foi desenvolvido utilizando o framework Spring Boot, escolhido por sua robustez, flexibilidade e ampla adoção no mercado. Essa tecnologia possibilitou integrar de forma segura a API do Google Sheets, garantindo a leitura dos dados necessários para o funcionamento da plataforma e enviando essas informações ao front-end de maneira estruturada e confiável. Todo o processo priorizou simplicidade na configuração e facilidade de manutenção, permitindo atender às demandas do projeto com eficiência. O código está disponível no repositório do projeto em \url{https://github.com/Tomaz5556/Horarios-IFNMG-Salinas/tree/main/backend}.
 
 \subsection{Estrutura do Back-end}
 
@@ -387,7 +375,7 @@ A estrutura do back-end está organizada seguindo o padrão arquitetural MVC, o 
 \subsection{Funcionalidades do Back-end}
 
 \begin{itemize}
-    \item Estabelecer a conexão segura com a API do Google Sheets para coletar os dados das planilhas utilizadas como banco de dados da aplicação. Essa funcionalidade está implementada na classe SheetsService, exibida a seguir na Figura \ref{fig_back_2}.
+    \item Estabelecer a conexão segura com a API do Google Sheets para coletar os dados das planilhas utilizadas como banco de dados. Essa função é executada pela classe SheetsService, que gerencia a integração entre o back-end e o serviço do Google, possibilitando o acesso dinâmico e estruturado às informações necessárias para o funcionamento da plataforma.
     
     \begin{figure}[H]
         \centering
@@ -396,8 +384,8 @@ A estrutura do back-end está organizada seguindo o padrão arquitetural MVC, o 
         \caption*{Fonte: AUTOR (2025)}
         \label{fig_back_2}
     \end{figure}
-
-    A Figura \ref{fig_back_2} mostra a classe SheetsService.java, responsável por estabelecer a comunicação entre o back-end da aplicação e a API do Google Sheets. Essa classe permite que os dados armazenados nas planilhas sejam acessados dinamicamente pela plataforma. A seguir, estão descritas suas principais funcionalidades:
+    
+    A Figura \ref{fig_back_2} mostra a classe SheetsService.java. A seguir, estão descritas suas principais funcionalidades:
 
     \begin{itemize}
         \item \textbf{Constantes}: APPLICATION\_NAME e JSON\_FACTORY são utilizadas para configurar a instância da API do Google Sheets. O nome da aplicação é definido para identificação no console da API, e o JsonFactory especifica o formato de serialização dos dados trafegados entre o back-end e o serviço do Google.
@@ -436,7 +424,7 @@ A estrutura do back-end está organizada seguindo o padrão arquitetural MVC, o 
 
     O objetivo do endpoint apresentado na Figura \ref{fig_back_4} é retornar os horários dos cursos superiores. O parâmetro utilizado é cursoSelecionado, que é opcional e, por padrão, assume o valor "todos". Tendo isso como referência, o sistema consulta os dados na planilha e os retorna de forma organizada dentro de um objeto Horarios com os horários de todos os cursos superiores ou de um curso superior específico.
 
-    \begin{figure}[htb]
+    \begin{figure}[H]
         \centering
         \caption{Endpoint de consulta dos horários dos professores}
         \includegraphics[width=1\textwidth]{Figuras/back-5.png}
@@ -481,7 +469,7 @@ A estrutura do back-end está organizada seguindo o padrão arquitetural MVC, o 
 
 O front-end foi hospedado na plataforma Vercel, permitindo a disponibilização da interface do usuário com alta performance e integração contínua, como mostrado na Figura \ref{fig_deploy_1}.
 
-\begin{figure}[H]
+\begin{figure}[htb]
     \centering
     \caption{Deploy do front-end da plataforma na Vercel}
     \includegraphics[width=1\textwidth]{Figuras/deploy-1.png}
@@ -491,7 +479,7 @@ O front-end foi hospedado na plataforma Vercel, permitindo a disponibilização 
 
 Já o back-end foi hospedado na plataforma Koyeb, responsável por executar a API que processa e envia os dados do Google Sheets ao front-end, conforme ilustrado na Figura \ref{fig_deploy_2}.
 
-\begin{figure}[htb]
+\begin{figure}[H]
     \centering
     \caption{Deploy do back-end da plataforma na Koyeb}
     \includegraphics[width=1\textwidth]{Figuras/deploy-2.png}
@@ -501,12 +489,12 @@ Já o back-end foi hospedado na plataforma Koyeb, responsável por executar a AP
 
 \section{Documentação}
 
-As Figuras \ref{fig_doc_1}, \ref{fig_doc_2} e \ref{fig_doc_3} apresentam a documentação técnica elaborada para a planilha utilizada como banco de dados do sistema. A documentação está disponível no repositório do projeto, no endereço \url{https://tomaz5556.github.io/Horarios-IFNMG-Salinas}. Esse material descreve de forma clara e objetiva as instruções para atualização do identificador da planilha, as regras de preenchimento dos dados e os padrões de nomes e intervalos de células necessários para garantir a integridade do funcionamento da plataforma.
+As Figuras \ref{fig_doc_1}, \ref{fig_doc_2} e \ref{fig_doc_3} apresentam a documentação técnica elaborada para a planilha utilizada como banco de dados do sistema. A documentação está disponível no seguinte endereço \url{https://tomaz5556.github.io/Horarios-IFNMG-Salinas}. Esse material descreve, de forma clara e objetiva, as instruções para atualização do identificador da planilha, as regras de preenchimento dos dados, bem como os padrões de nomes e intervalos de células necessários para garantir a integridade do funcionamento da plataforma.
 
-\begin{figure}[H]
+\begin{figure}[htb]
     \centering
     \caption{Instruções para desenvolvedores}
-    \includegraphics[width=1\textwidth]{Figuras/doc-1.png}
+    \includegraphics[width=0.9\textwidth]{Figuras/doc-1.png}
     \caption*{Fonte: AUTOR (2025)}
     \label{fig_doc_1}
 \end{figure}
@@ -514,7 +502,7 @@ As Figuras \ref{fig_doc_1}, \ref{fig_doc_2} e \ref{fig_doc_3} apresentam a docum
 \begin{figure}[htb]
     \centering
     \caption{Instruções para administradores da planilha}
-    \includegraphics[width=1\textwidth]{Figuras/doc-2.png}
+    \includegraphics[width=0.9\textwidth]{Figuras/doc-2.png}
     \caption*{Fonte: AUTOR (2025)}
     \label{fig_doc_2}
 \end{figure}
@@ -522,7 +510,7 @@ As Figuras \ref{fig_doc_1}, \ref{fig_doc_2} e \ref{fig_doc_3} apresentam a docum
 \begin{figure}[htb]
     \centering
     \caption{Explicação das guias e intervalos de células}
-    \includegraphics[width=1\textwidth]{Figuras/doc-3.png}
+    \includegraphics[width=0.9\textwidth]{Figuras/doc-3.png}
     \caption*{Fonte: AUTOR (2025)}
     \label{fig_doc_3}
 \end{figure}
@@ -530,7 +518,7 @@ As Figuras \ref{fig_doc_1}, \ref{fig_doc_2} e \ref{fig_doc_3} apresentam a docum
 \begin{figure}[htb]
     \centering
     \caption{Observação sobre mudanças estruturais}
-    \includegraphics[width=1\textwidth]{Figuras/doc-4.png}
+    \includegraphics[width=0.9\textwidth]{Figuras/doc-4.png}
     \caption*{Fonte: AUTOR (2025)}
     \label{fig_doc_4}
 \end{figure}
