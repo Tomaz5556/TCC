@@ -190,17 +190,17 @@ A estrutura do front-end está organizada de forma modular, visando clareza, man
 \end{figure}
 
 \begin{itemize}
-    \item api: pasta responsável por buscar dados da planilha por meio de requisições, contando com o arquivo routes.ts para gerenciar essas chamadas.
+    \item api: pasta responsável por buscar dados da planilha por meio de requisições, contando com o arquivo routes.ts, que gerencia essas chamadas e contém a variável de ambiente para comunicação com o back-end.
     \item components: pasta que centraliza os componentes do sistema, subdividida em:
     \begin{itemize}
         \item auth: pasta responsável pelo controle de autenticação, incluindo o arquivo LoginValidacao.tsx, que verifica as credenciais de login antes de entrar na tela de validação.
         \item common: pasta destinada a componentes reutilizáveis, contendo:
         \begin{itemize}
-            \item buttons: reúne botões de ação como BackButton.tsx (retorno), DownloadButton.tsx (download de tabelas) e SearchButton.tsx (busca de horários).
+            \item buttons: reúne botões de ação como BackButton.tsx para retorno, DownloadButton.tsx para download de tabelas e SearchButton.tsx para busca de horários.
              \item dropdowns: responsável pelas listas suspensas, como o arquivo DropdownList.tsx, utilizado para seleção de cursos, professores ou salas.
         \end{itemize}
-        \item schedules: pasta com componentes independentes para exibição de horários, como HorariosCursos.tsx, HorariosProfessores.tsx, HorariosSalas.tsx e ValidacaoDados.tsx.
-        \item tables: pasta com componentes independentes para apresentação das tabelas com os dados, incluindo TabelaCursos.tsx, TabelaProfessores.tsx, TabelaSalas.tsx e TabelaValidacao.tsx.
+        \item schedules: pasta com componentes independentes para exibição de horários organizados por tipo de consulta, como HorariosCursos.tsx, HorariosProfessores.tsx e HorariosSalas.tsx, que apresentam uma lista suspensa para seleção e uma tabela com os horários correspondentes, e ValidacaoDados.tsx, que exibe a tabela com os resultados da validação da planilha dos horários.
+        \item tables: pasta com componentes independentes das tabelas com os dados, incluindo TabelaCursos.tsx, TabelaProfessores.tsx, TabelaSalas.tsx e TabelaValidacao.tsx.
     \end{itemize}
     \item constants: pasta responsável por definir as listas de cursos e salas disponíveis, armazenadas nos arquivos cursos.ts e salas.ts.
     \item pages: organiza as rotas da aplicação, com páginas específicas para cursos, professores, salas, login e validação.
@@ -215,10 +215,10 @@ A estrutura do front-end está organizada de forma modular, visando clareza, man
 \begin{itemize}
     \item Modo escuro: adapta automaticamente o tema da aplicação entre claro ou escuro, de acordo com a configuração do navegador, oferecendo maior conforto visual aos usuários. Conforme mostrado na Figura \ref{fig_front_15}.
 
-    \begin{figure}[H]
+    \begin{figure}[htb]
         \centering
         \caption{Modo escuro}
-        \includegraphics[width=0.9\textwidth]{Figuras/front-15.png}
+        \includegraphics[width=1\textwidth]{Figuras/front-15.png}
         \caption*{Fonte: AUTOR (2025)}
         \label{fig_front_15}
     \end{figure}
@@ -228,7 +228,7 @@ A estrutura do front-end está organizada de forma modular, visando clareza, man
     \begin{figure}[H]
         \centering
         \caption{Responsividade}
-        \includegraphics[width=0.3\textwidth]{Figuras/front-16.png}
+        \includegraphics[width=0.7\textwidth]{Figuras/front-16.png}
         \caption*{Fonte: AUTOR (2025)}
         \label{fig_front_16}
     \end{figure}
@@ -245,10 +245,10 @@ A estrutura do front-end está organizada de forma modular, visando clareza, man
     
     \item Busca de horários de professores: permite selecionar um professor em uma lista suspensa e visualizar os horários de segunda a sexta-feira. Ilustrado na Figura \ref{fig_front_18}.
 
-    \begin{figure}[H]
+    \begin{figure}[htb]
         \centering
         \caption{Busca de horários de professores}
-        \includegraphics[width=0.25\textwidth]{Figuras/front-18.png}
+        \includegraphics[width=0.6\textwidth]{Figuras/front-18.png}
         \caption*{Fonte: AUTOR (2025)}
         \label{fig_front_18}
     \end{figure}
@@ -258,7 +258,7 @@ A estrutura do front-end está organizada de forma modular, visando clareza, man
     \begin{figure}[htb]
         \centering
         \caption{Busca de horários de salas}
-        \includegraphics[width=0.25\textwidth]{Figuras/front-19.png}
+        \includegraphics[width=0.5\textwidth]{Figuras/front-19.png}
         \caption*{Fonte: AUTOR (2025)}
         \label{fig_front_19}
     \end{figure}
@@ -305,7 +305,7 @@ A estrutura do front-end está organizada de forma modular, visando clareza, man
 
 O sistema utiliza duas planilhas hospedadas no Google Sheets. A primeira planilha contém duas guias com os horários acadêmicos e a uma guia com a lista dos professores disponíveis, conforme apresentado a seguir:
 
-\begin{figure}[htb]
+\begin{figure}[H]
     \centering
     \caption{Horário - Ensino Médio}
     \includegraphics[width=0.9\textwidth]{Figuras/plan-1.png}
@@ -325,7 +325,7 @@ A Figura \ref{fig_plan_1} mostra a guia que contém os horários das turmas dos 
 
 A Figura \ref{fig_plan_2} mostra a guia que contém os horários das turmas dos cursos superiores, distribuídos no intervalo de células B2:AW106.
 
-\begin{figure}[htb]
+\begin{figure}[H]
     \centering
     \caption{Validação de Dados}
     \includegraphics[width=0.9\textwidth]{Figuras/plan-3.png}
@@ -337,10 +337,10 @@ A Figura \ref{fig_plan_3}, mostra a guia que reúne a lista de professores da in
 
 A segunda planilha contém uma guia com as credenciais de login necessárias para autenticação:
 
-\begin{figure}[H]
+\begin{figure}[htb]
     \centering
     \caption{Login}
-    \includegraphics[width=0.9\textwidth]{Figuras/plan-4.png}
+    \includegraphics[width=0.75\textwidth]{Figuras/plan-4.png}
     \caption*{Fonte: AUTOR (2025)}
     \label{fig_plan_4}
 \end{figure}
@@ -358,18 +358,18 @@ A estrutura do back-end está organizada seguindo o padrão arquitetural MVC, o 
 \begin{figure}[htb]
     \centering
     \caption{Estrutura do back-end}
-    \includegraphics[width=0.4\textwidth]{Figuras/back-1.png}
+    \includegraphics[width=0.85\textwidth]{Figuras/back-1.png}
     \caption*{Fonte: AUTOR (2025)}
     \label{fig_back_1}
 \end{figure}
 
 \begin{itemize}
-    \item config: pasta responsável por armazenar classes de configuração do sistema, incluindo a EnvConfig.java, que define as variáveis de ambiente, e a WebConfig.java, responsável pelos ajustes de configuração da aplicação Spring Boot.
-    \item constants: pasta responsável por centralizar valores fixos e listas utilizadas no sistema, contendo as classes CursosConstants.java, LoginConstants.java e ProfessoresSalasConstants.java, que mantêm os dados de cursos, professores, salas e credenciais de login.
-    \item controller: pasta responsável por controlar as requisições recebidas e encaminhá-las para os serviços adequados, abrigando a classe SheetsController.java, que gerencia as rotas da aplicação.
-    \item model: pasta responsável por definir as classes de domínio que representam a estrutura dos dados, como Curso.java e Horarios.java, que servem de modelo para a manipulação das informações obtidas do Google Sheets.
-    \item service: pasta responsável por concentrar as regras de negócio e a comunicação com a API do Google Sheets, incluindo as classes CursosMedioService.java, CursosSuperiorService.java, HorariosService.java, LoginService.java, ProfessoresService.java, SalasService.java, SheetsService.java e ValidacoesService.java.
-    \item HorariosApplication.java: arquivo inicializador da aplicação Spring Boot, responsável por executar o sistema e carregar todas as configurações necessárias para o funcionamento da plataforma.
+    \item config: pacote para armazenar classes de configuração do sistema, como a EnvConfig.java, que define as variáveis de ambiente, e a WebConfig.java, responsável por ajustes na configuração do Spring Boot, incluindo a definição do CORS. Um mecanismo que define quais origens externas podem se comunicar com a API, permitindo uma integração segura entre o front-end e o back-end, mesmo em domínios diferentes.
+    \item constants: pacote para centralizar valores fixos e listas, contendo as classes CursosConstants.java, LoginConstants.java e ProfessoresSalasConstants.java, que mantêm os dados de cursos, professores, salas e credenciais de login.
+    \item controller: pacote para controlar as requisições recebidas e encaminhá-las para os serviços adequados, abrigando a classe SheetsController.java, que gerencia as rotas da aplicação.
+    \item model: pacote para definir as classes de domínio que representam a estrutura dos dados, como Curso.java e Horarios.java, que servem de modelo para a manipulação das informações obtidas do Google Sheets.
+    \item service: pacote para concentrar as regras de negócio e a comunicação com a API do Google Sheets, incluindo as classes CursosMedioService.java, CursosSuperiorService.java, HorariosService.java, LoginService.java, ProfessoresService.java, SalasService.java, SheetsService.java e ValidacoesService.java.
+    \item HorariosApplication.java: classe principal que executa a aplicação Spring Boot e carrega as configurações do sistema.
 \end{itemize}
 
 \subsection{Funcionalidades do Back-end}
@@ -390,15 +390,15 @@ A estrutura do back-end está organizada seguindo o padrão arquitetural MVC, o 
     \begin{itemize}
         \item \textbf{Constantes}: APPLICATION\_NAME e JSON\_FACTORY são utilizadas para configurar a instância da API do Google Sheets. O nome da aplicação é definido para identificação no console da API, e o JsonFactory especifica o formato de serialização dos dados trafegados entre o back-end e o serviço do Google.
         \item \textbf{Construtor SheetsService()}: Responsável por configurar a instância do cliente da API do Google Sheets, que é armazenada no atributo sheetsService. Para isso, é utilizada uma conexão segura, criada com GoogleNetHttpTransport, garantindo uma comunicação autenticada e confiável entre o sistema e a API.
-        \item \textbf{Método getSheetValues(String range)}: Lê os dados da planilha principal, onde estão os horários acadêmicos, com base no intervalo informado. O método utiliza duas variáveis de ambiente:
+        \item \textbf{Método getSheetValues(String range)}: Realiza a leitura dos dados da planilha principal, onde estão os horários acadêmicos, com base no intervalo informado pelo parâmetro range. O método utiliza duas variáveis de ambiente:
         \begin{itemize}
             \item \textit{EnvConfig.SPREADSHEET\_ID}: ID da planilha com os horários acadêmicos.
-            \item \textit{EnvConfig.API\_KEY}: chave de acesso à API do Google Sheets.
+            \item \textit{EnvConfig.API\_KEY}: chave de API do Google Sheets.
         \end{itemize}
-        \item \textbf{Método getSheetValuesLogin(String range)}: Realiza a leitura de dados da planilha de login, usada na tela de validação de dados. Utiliza como base:
+        \item \textbf{Método getSheetValuesLogin(String range)}: Realiza a leitura dos dados da planilha de login, com base no intervalo informado pelo parâmetro range. Esse método é executado antes do acesso à tela de validação de dados, sendo responsável por autenticar o usuário na tela de login. As variáveis de ambiente utilizadas são:
         \begin{itemize}
             \item \textit{EnvConfig.SPREADSHEET\_LOGIN}: ID da planilha com as credenciais de login.
-            \item \textit{EnvConfig.API\_KEY}: mesma chave usada no método anterior.
+            \item \textit{EnvConfig.API\_KEY}: mesma chave de API do Google Sheets em uso no método anterior.
         \end{itemize}
     \end{itemize}
 
@@ -424,7 +424,7 @@ A estrutura do back-end está organizada seguindo o padrão arquitetural MVC, o 
 
     O objetivo do endpoint apresentado na Figura \ref{fig_back_4} é retornar os horários dos cursos superiores. O parâmetro utilizado é cursoSelecionado, que é opcional e, por padrão, assume o valor "todos". Tendo isso como referência, o sistema consulta os dados na planilha e os retorna de forma organizada dentro de um objeto Horarios com os horários de todos os cursos superiores ou de um curso superior específico.
 
-    \begin{figure}[H]
+    \begin{figure}[htb]
         \centering
         \caption{Endpoint de consulta dos horários dos professores}
         \includegraphics[width=1\textwidth]{Figuras/back-5.png}
