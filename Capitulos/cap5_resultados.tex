@@ -233,17 +233,17 @@ A estrutura do front-end está organizada de forma modular, visando clareza, man
         \label{fig_front_16}
     \end{figure}
     
-    \item \textbf{Busca de horários de cursos}: possibilita consultar os horários dos cursos técnicos e superiores, exibindo os dias e horários de segunda a sexta-feira. Apresentado na Figura \ref{fig_front_17}.
+    \item \textbf{Busca de horários de cursos}: possibilita consultar os horários dos cursos técnicos e superiores, exibindo os dias e horários de segunda a sexta-feira. Apresentado na Figura \ref{fig_front_17}. (corrigir)
 
     \begin{figure}[htb]
         \centering
-        \caption{Busca de horários de cursos}
+        \caption{Busca de horários dos cursos técnicos e superiores}
         \includegraphics[width=0.7\textwidth]{Figuras/front-17.png}
         \caption*{Fonte: AUTOR (2025)}
         \label{fig_front_17}
     \end{figure}
     
-    \item \textbf{Busca de horários de professores}: permite selecionar um professor em uma lista suspensa e visualizar os horários de segunda a sexta-feira. Ilustrado na Figura \ref{fig_front_18}.
+    \item \textbf{Busca de horários de professores}: permite selecionar um professor em uma lista suspensa e visualizar os horários de segunda a sexta-feira. Ilustrado na Figura \ref{fig_front_18}. (corrigir)
 
     \begin{figure}[htb]
         \centering
@@ -253,7 +253,7 @@ A estrutura do front-end está organizada de forma modular, visando clareza, man
         \label{fig_front_18}
     \end{figure}
     
-    \item \textbf{Busca de horários de salas}: permite selecionar uma sala em uma lista suspensa e visualizar os horários de ocupação de segunda a sexta-feira. Conforme mostrado na Figura \ref{fig_front_19}.
+    \item \textbf{Busca de horários de salas}: permite selecionar uma sala em uma lista suspensa e visualizar os horários de ocupação de segunda a sexta-feira. Conforme mostrado na Figura \ref{fig_front_19}. (corrigir)
 
     \begin{figure}[htb]
         \centering
@@ -283,12 +283,18 @@ A estrutura do front-end está organizada de forma modular, visando clareza, man
         \label{fig_front_21}
     \end{figure}
     
-    \item \textbf{Tela de validação}: exibe os resultados da verificação da planilha de horários, apresentando uma tabela com indicadores de conformidade (SIM ou NÃO) e validando: (melhorar)
-    \begin{itemize}
-        \item a presença das guias Horário - Ensino Médio, Horário - Graduação e Validação de Dados;
-        \item a existência dos intervalos de células (B2:V76), (B2:AW106) e (A2:A);
-        \item a formatação correta dos nomes, verificando se contêm os parênteses exigidos para turmas e professores. Se forem encontradas inconsistências, a tela exibe as células problemáticas, informando a guia, coluna e linha correspondentes. Ilustrado na Figura \ref{fig_front_22}.
-    \end{itemize}
+    \item \textbf{Tela de validação}: apresenta os resultados da verificação da planilha dos horários por meio de uma tabela com indicadores de conformidade, exibindo “SIM” ou “NÃO” para cada item validado. O processo de validação realiza as seguintes verificações:
+    \begin{enumerate}
+        \item Verificar a presença da guia "Horário - Ensino Médio" que contém os horários das turmas dos cursos técnicos.
+        \item Verificar a presença da guia "Horário - Graduação" que contém os horários das turmas dos cursos técnicos. a presença da guia.
+        \item Verificar a presença da guia "Validação de Dados" que reúne a lista de professores da instituição.
+        \item Validar se o intervalo B2:V76 está presente na guia “Horário – Ensino Médio”.
+        \item Validar se o intervalo B2:AW106 está presente na guia “Horário – Graduação”.
+        \item Validar se o intervalo A2:A está presente na guia “Validação de Dados”.
+        \item Avaliar a formatação das células, verificando se contêm os parênteses exigidos e se os nomes das turmas não apresentam parênteses. Se forem encontradas inconsistências, a tela exibe as células problemáticas, informando a guia, coluna e linha correspondentes.
+    \end{enumerate}
+
+    Ao final da página, é exibida uma mensagem com o resultado final da validação de dados. Caso todas as verificações sejam concluídas com êxito, a planilha é considerada em ótimo estado. Se forem identificados problemas, a mensagem informa que foram encontradas inconsistências que precisam ser corrigidas. Quando ocorre alguma falha durante o processo, a mensagem indica que houve um erro ao realizar a validação da planilha. Um exemplo dessa funcionalidade é ilustrada na Figura \ref{fig_front_22}.
 
     \begin{figure}[htb]
         \centering
@@ -303,9 +309,9 @@ A estrutura do front-end está organizada de forma modular, visando clareza, man
 
 \subsection{Google Sheets como Banco de Dados}
 
-O sistema utiliza duas planilhas hospedadas no Google Sheets. A primeira planilha contém duas guias com os horários acadêmicos e a uma guia com a lista dos professores disponíveis, conforme apresentado a seguir:
+O sistema utiliza duas planilhas hospedadas no Google Sheets. A primeira planilha contém duas guias com os horários acadêmicos e a uma guia com a lista dos professores disponíveis, conforme apresentado a seguir: (verificar ordem texto e imagem TCC)
 
-\begin{figure}[H]
+\begin{figure}[htb]
     \centering
     \caption{Horário - Ensino Médio}
     \includegraphics[width=0.9\textwidth]{Figuras/plan-1.png}
@@ -325,7 +331,7 @@ A Figura \ref{fig_plan_1} mostra a guia que contém os horários das turmas dos 
 
 A Figura \ref{fig_plan_2} mostra a guia que contém os horários das turmas dos cursos superiores, distribuídos no intervalo de células B2:AW106.
 
-\begin{figure}[H]
+\begin{figure}[htb]
     \centering
     \caption{Validação de Dados}
     \includegraphics[width=0.9\textwidth]{Figuras/plan-3.png}
@@ -337,7 +343,7 @@ A Figura \ref{fig_plan_3}, mostra a guia que reúne a lista de professores da in
 
 A segunda planilha contém uma guia com as credenciais de login necessárias para autenticação:
 
-\begin{figure}[htb]
+\begin{figure}[H]
     \centering
     \caption{Login}
     \includegraphics[width=0.75\textwidth]{Figuras/plan-4.png}
@@ -358,7 +364,7 @@ A estrutura do back-end está organizada seguindo o padrão arquitetural MVC, o 
 \begin{figure}[htb]
     \centering
     \caption{Estrutura do back-end}
-    \includegraphics[width=0.85\textwidth]{Figuras/back-1.png}
+    \includegraphics[width=0.9\textwidth]{Figuras/back-1.png}
     \caption*{Fonte: AUTOR (2025)}
     \label{fig_back_1}
 \end{figure}
@@ -377,7 +383,7 @@ A estrutura do back-end está organizada seguindo o padrão arquitetural MVC, o 
 \begin{itemize}
     \item \textbf{Estabelecer a conexão com a API do Google Sheets}: para coletar os dados das planilhas utilizadas como banco de dados. Essa função é executada pela classe SheetsService, que gerencia a integração entre o back-end e o serviço do Google, possibilitando o acesso dinâmico e estruturado às informações necessárias para o funcionamento da plataforma.
     
-    \begin{figure}[H]
+    \begin{figure}[htb]
         \centering
         \caption{SheetsService.java}
         \includegraphics[width=1\textwidth]{Figuras/back-2.png}
@@ -402,12 +408,12 @@ A estrutura do back-end está organizada seguindo o padrão arquitetural MVC, o 
         \end{itemize}
     \end{itemize}
 
-    \item \textbf{Disponibilizar endpoints REST}: para consultar horários de cursos, professores, salas e resultados de validação de dados, assegurando respostas padronizadas e consistentes. Essa funcionalidade é implementada na classe SheetsController, que organiza e define as rotas de acesso dos dados. As rotas são definidas exclusivamente com o método GET, uma vez que o sistema realiza apenas operações de leitura, sem modificar os dados. Cada rota é mapeada para um método específico do controller, responsável por retornar as informações de forma estruturada por meio do objeto ResponseEntity. A seguir, são descritos os principais endpoints da aplicação. (ver se dar para aumentar imagens dos endpoints)
+    \item \textbf{Disponibilizar endpoints REST}: para consultar horários de cursos, professores, salas e resultados de validação de dados, assegurando respostas padronizadas e consistentes. Essa funcionalidade é implementada na classe SheetsController, que organiza e define as rotas de acesso dos dados. As rotas são definidas exclusivamente com o método GET, uma vez que o sistema realiza apenas operações de leitura, sem modificar os dados. Cada rota é mapeada para um método específico do controller, responsável por retornar as informações de forma estruturada por meio do objeto ResponseEntity. A seguir, são descritos os principais endpoints da aplicação.
 
     \begin{figure}[htb]
         \centering
         \caption{Endpoint de consulta dos horários dos cursos técnicos}
-        \includegraphics[width=1\textwidth]{Figuras/back-3.png}
+        \includegraphics[width=0.9\textwidth]{Figuras/back-3.png}
         \caption*{Fonte: AUTOR (2025)}
         \label{fig_back_3}
     \end{figure}
@@ -417,7 +423,7 @@ A estrutura do back-end está organizada seguindo o padrão arquitetural MVC, o 
     \begin{figure}[htb]
         \centering
         \caption{Endpoint de consulta dos horários dos cursos superiores}
-        \includegraphics[width=1\textwidth]{Figuras/back-4.png}
+        \includegraphics[width=0.9\textwidth]{Figuras/back-4.png}
         \caption*{Fonte: AUTOR (2025)}
         \label{fig_back_4}
     \end{figure}
@@ -427,7 +433,7 @@ A estrutura do back-end está organizada seguindo o padrão arquitetural MVC, o 
     \begin{figure}[htb]
         \centering
         \caption{Endpoint de consulta dos horários dos professores}
-        \includegraphics[width=1\textwidth]{Figuras/back-5.png}
+        \includegraphics[width=0.9\textwidth]{Figuras/back-5.png}
         \caption*{Fonte: AUTOR (2025)}
         \label{fig_back_5}
     \end{figure}
@@ -437,7 +443,7 @@ A estrutura do back-end está organizada seguindo o padrão arquitetural MVC, o 
     \begin{figure}[htb]
         \centering
         \caption{Endpoint de consulta dos horários de ocupação das salas}
-        \includegraphics[width=1\textwidth]{Figuras/back-6.png}
+        \includegraphics[width=0.9\textwidth]{Figuras/back-6.png}
         \caption*{Fonte: AUTOR (2025)}
         \label{fig_back_6}
     \end{figure}
@@ -447,17 +453,17 @@ A estrutura do back-end está organizada seguindo o padrão arquitetural MVC, o 
     \begin{figure}[htb]
         \centering
         \caption{Endpoint de consulta das permissões para ver validação da planiha}
-        \includegraphics[width=1\textwidth]{Figuras/back-7.png}
+        \includegraphics[width=0.9\textwidth]{Figuras/back-7.png}
         \caption*{Fonte: AUTOR (2025)}
         \label{fig_back_7}
     \end{figure}
 
     Como mostrado na Figura \ref{fig_back_7}, o objetivo do endpoint é validar as credenciais de acesso informadas. Os parâmetros obrigatórios são usuario e senha. Com essas informações, o sistema realiza a autenticação e retorna uma mensagem com o status correspondente, sendo 200 em caso de sucesso ou 401 não autorizado caso as credenciais estejam incorretas.
 
-    \begin{figure}[H]
+    \begin{figure}[htb]
         \centering
         \caption{Endpoint de consulta para validar dados da planilha}
-        \includegraphics[width=1\textwidth]{Figuras/back-8.png}
+        \includegraphics[width=0.9\textwidth]{Figuras/back-8.png}
         \caption*{Fonte: AUTOR (2025)}
         \label{fig_back_8}
     \end{figure}
@@ -479,7 +485,7 @@ O front-end foi hospedado na plataforma Vercel, permitindo a disponibilização 
 
 Já o back-end foi hospedado na plataforma Koyeb, responsável por executar a API que processa e envia os dados do Google Sheets ao front-end, conforme ilustrado na Figura \ref{fig_deploy_2}.
 
-\begin{figure}[H]
+\begin{figure}[htb]
     \centering
     \caption{Deploy do back-end da plataforma na Koyeb}
     \includegraphics[width=1\textwidth]{Figuras/deploy-2.png}
