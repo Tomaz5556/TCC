@@ -5,7 +5,7 @@
 
 \subsection{Protótipos}
 
-Após a reunião de levantamento de requisitos, protótipos das telas principais da plataforma foram construídos no Figma para validação junto ao setor. Esses protótipos estão disponíveis no repositório do projeto, no endereço \url{https://github.com/Tomaz5556/Horarios-IFNMG-Salinas/blob/main/prototipos/figma.pdf}. A seguir, são apresentadas as telas desenvolvidas:
+Após a reunião de levantamento de requisitos, protótipos das telas principais da plataforma foram construídos no \textit{Figma} para validação junto ao setor. Esses protótipos estão disponíveis no repositório do projeto, no endereço \url{https://github.com/Tomaz5556/Horarios-IFNMG-Salinas/blob/main/prototipos/figma.pdf}. A seguir, são apresentadas as telas desenvolvidas:
 
 \begin{figure}[htb]
     \centering
@@ -57,7 +57,7 @@ A Figura \ref{fig_proto_5} apresenta o protótipo da tela das salas, exibindo os
 
 \subsection{Desenvolvimento do Front-end}
 
-O front-end foi desenvolvido com o Next.js. Essa tecnologia possibilitou criar uma interface moderna e eficiente, capaz de responder dinamicamente a eventos e mudanças de estado, garantindo uma experiência de usuário fluida e responsiva. Todo o trabalho priorizou clareza na organização dos componentes, reutilização de elementos e facilidade de futuras evoluções, atendendo às necessidades do projeto com agilidade. O código está disponível no repositório do projeto em \url{https://github.com/Tomaz5556/Horarios-IFNMG-Salinas/tree/main/frontend}. A seguir, são exibidas as telas resultantes desse processo:
+O \textit{front-end} foi desenvolvido com o \textit{Next.js}. Essa tecnologia possibilitou criar uma interface moderna e eficiente, capaz de responder dinamicamente a eventos e mudanças de estado, garantindo uma experiência de usuário fluida e responsiva. Todo o trabalho priorizou clareza na organização dos componentes, reutilização de elementos e facilidade de futuras evoluções, atendendo às necessidades do projeto com agilidade. O código está disponível no repositório do projeto em \url{https://github.com/Tomaz5556/Horarios-IFNMG-Salinas/tree/main/frontend}. A seguir, são exibidas as telas resultantes desse processo:
 
 \begin{figure}[htb]
     \centering
@@ -179,7 +179,7 @@ Por fim, as Figuras \ref{fig_front_11}, \ref{fig_front_12} e \ref{fig_front_13} 
 
 \subsection{Estrutura do Front-end}
 
-A estrutura do front-end está organizada de forma modular, visando clareza, manutenção facilitada e reutilização de código. Na Figura \ref{fig_front_14}, destacam-se os principais elementos:
+A estrutura do \textit{front-end} está organizada de forma modular, visando clareza, manutenção facilitada e reutilização de código. Na Figura \ref{fig_front_14}, destacam-se os principais elementos:
 
 \begin{figure}[htb]
     \centering
@@ -190,24 +190,24 @@ A estrutura do front-end está organizada de forma modular, visando clareza, man
 \end{figure}
 
 \begin{itemize}
-    \item api: pasta responsável por buscar dados da planilha por meio de requisições, contando com o arquivo routes.ts, que gerencia essas chamadas e contém a variável de ambiente para comunicação com o back-end.
+    \item \textbf{api}: pasta responsável por buscar dados da planilha por meio de requisições, contando com o arquivo \textit{routes.ts}, que gerencia essas chamadas e contém a variável de ambiente para comunicação com o \textit{back-end}.
     \item components: pasta que centraliza os componentes do sistema, subdividida em:
     \begin{itemize}
-        \item auth: pasta responsável pelo controle de autenticação, incluindo o arquivo LoginValidacao.tsx, que verifica as credenciais de login antes de entrar na tela de validação.
-        \item common: pasta destinada a componentes reutilizáveis, contendo:
+        \item \textbf{auth}: pasta responsável pelo controle de autenticação, incluindo o arquivo \textit{LoginValidacao.tsx}, que verifica as credenciais de login antes de entrar na tela de validação.
+        \item \textbf{common}: pasta destinada a componentes reutilizáveis, contendo:
         \begin{itemize}
-            \item buttons: reúne botões de ação como BackButton.tsx para retorno, DownloadButton.tsx para download de tabelas e SearchButton.tsx para busca de horários.
-             \item dropdowns: responsável pelas listas suspensas, como o arquivo DropdownList.tsx, utilizado para seleção de cursos, professores ou salas.
+            \item \textbf{buttons}: reúne botões de ação como \textit{BackButton.tsx} para retorno, \textit{DownloadButton.tsx} para download de tabelas e \textit{SearchButton.tsx} para busca de horários.
+             \item \textbf{dropdowns}: responsável pelas listas suspensas, como o arquivo \textit{DropdownList.tsx}, utilizado para seleção de cursos, professores ou salas.
         \end{itemize}
-        \item schedules: pasta com componentes independentes para exibição de horários organizados por tipo de consulta, como HorariosCursos.tsx, HorariosProfessores.tsx e HorariosSalas.tsx, que apresentam uma lista suspensa para seleção e uma tabela com os horários correspondentes, e ValidacaoDados.tsx, que exibe a tabela com os resultados da validação da planilha dos horários.
-        \item tables: pasta com componentes independentes das tabelas com os dados, incluindo TabelaCursos.tsx, TabelaProfessores.tsx, TabelaSalas.tsx e TabelaValidacao.tsx.
+        \item \textbf{schedules}: pasta com componentes independentes para exibição de horários organizados por tipo de consulta, como \textit{HorariosCursos.tsx}, \textit{HorariosProfessores.tsx} e \textit{HorariosSalas.tsx}, que apresentam uma lista suspensa para seleção e uma tabela com os horários correspondentes, e \textit{ValidacaoDados.tsx}, que exibe a tabela com os resultados da validação da planilha dos horários.
+        \item \textbf{tables}: pasta com componentes independentes das tabelas com os dados, incluindo \textit{TabelaCursos.tsx}, \textit{TabelaProfessores.tsx}, \textit{TabelaSalas.tsx} e \textit{TabelaValidacao.tsx}.
     \end{itemize}
-    \item constants: pasta responsável por definir as listas de cursos e salas disponíveis, armazenadas nos arquivos cursos.ts e salas.ts.
-    \item pages: organiza as rotas da aplicação, com páginas específicas para cursos, professores, salas, login e validação.
-    \item globals.css: arquivo de estilos globais aplicados em toda a interface.
-    \item layout.tsx: define a estrutura geral de layout e permite a edição de metadados de forma centralizada.
-    \item page.tsx: página inicial que exibe o menu principal com opções de botões de horários e outros serviços.
-    \item public: pasta com imagens do logotipo institucional do IFNMG Campus Salinas, disponibilizadas tanto na versão padrão quanto na versão em preto e branco.
+    \item \textbf{constants}: pasta responsável por definir as listas de cursos e salas disponíveis, armazenadas nos arquivos \textit{cursos.ts} e \textit{salas.ts}.
+    \item \textbf{pages}: organiza as rotas da aplicação, com páginas específicas para cursos, professores, salas, login e validação.
+    \item \textbf{globals.css}: arquivo de estilos globais aplicados em toda a interface.
+    \item \textbf{layout.tsx}: define a estrutura geral de layout e permite a edição de metadados de forma centralizada.
+    \item \textbf{page.tsx}: página inicial que exibe o menu principal com opções de botões de horários e outros serviços.
+    \item \textbf{public}: pasta com imagens do logotipo institucional do IFNMG Campus Salinas, disponibilizadas tanto na versão padrão quanto na versão em preto e branco.
 \end{itemize}
 
 \subsection{Funcionalidades do Front-end}
@@ -283,14 +283,14 @@ A estrutura do front-end está organizada de forma modular, visando clareza, man
         \label{fig_front_21}
     \end{figure}
     
-    \item \textbf{Tela de validação}: apresenta os resultados da verificação da planilha dos horários por meio de uma tabela com indicadores de conformidade, exibindo “SIM” ou “NÃO” para cada item validado. O processo de validação realiza as seguintes verificações:
+    \item \textbf{Tela de validação}: apresenta os resultados da verificação da planilha dos horários por meio de uma tabela com indicadores de conformidade, exibindo ``SIM'' ou ``NÃO'' para cada item validado. O processo de validação realiza as seguintes verificações:
     \begin{enumerate}
-        \item Verificar a presença da guia "Horário - Ensino Médio" que contém os horários das turmas dos cursos técnicos.
-        \item Verificar a presença da guia "Horário - Graduação" que contém os horários das turmas dos cursos técnicos. a presença da guia.
-        \item Verificar a presença da guia "Validação de Dados" que reúne a lista de professores da instituição.
-        \item Validar se o intervalo B2:V76 está presente na guia “Horário – Ensino Médio”.
-        \item Validar se o intervalo B2:AW106 está presente na guia “Horário – Graduação”.
-        \item Validar se o intervalo A2:A está presente na guia “Validação de Dados”.
+        \item Verificar a presença da guia \textit{Horário - Ensino Médio} que contém os horários das turmas dos cursos técnicos.
+        \item Verificar a presença da guia \textit{Horário - Graduação} que contém os horários das turmas dos cursos superiores.
+        \item Verificar a presença da guia \textit{Validação de Dados} que reúne a lista de professores da instituição.
+        \item Validar se o intervalo B2:V76 está presente na guia \textit{Horário - Ensino Médio}.
+        \item Validar se o intervalo B2:AW106 está presente na guia \textit{Horário - Graduação}.
+        \item Validar se o intervalo A2:A está presente na guia \textit{Validação de Dados}.
         \item Avaliar a formatação das células, verificando se contêm os parênteses exigidos e se os nomes das turmas não apresentam parênteses. Se forem encontradas inconsistências, a tela exibe as células problemáticas, informando a guia, coluna e linha correspondentes.
     \end{enumerate}
 
@@ -309,7 +309,7 @@ A estrutura do front-end está organizada de forma modular, visando clareza, man
 
 \subsection{Google Sheets como Banco de Dados}
 
-O sistema utiliza duas planilhas hospedadas no Google Sheets. A primeira planilha contém duas guias com os horários acadêmicos e a uma guia com a lista dos professores disponíveis, conforme apresentado a seguir:
+O sistema utiliza duas planilhas hospedadas no \textit{Google Sheets}. A primeira planilha contém duas guias com os horários acadêmicos e a uma guia com a lista dos professores disponíveis, conforme apresentado a seguir:
 
 \begin{figure}[htb]
     \centering
@@ -355,11 +355,11 @@ A Figura \ref{fig_plan_4} mostra a guia da planilha com as credenciais de login 
 
 \subsection{Desenvolvimento do Back-end}
 
-O back-end foi desenvolvido com a linguagem Java e o Spring Framework. Essa tecnologia possibilitou integrar de forma segura a API do Google Sheets, garantindo a leitura dos dados necessários para o funcionamento da plataforma e enviando essas informações ao front-end de maneira estruturada e confiável. Todo o processo priorizou simplicidade na configuração e facilidade de manutenção, permitindo atender às demandas do projeto com eficiência. O código está disponível no repositório do projeto em \url{https://github.com/Tomaz5556/Horarios-IFNMG-Salinas/tree/main/backend}.
+O \textit{back-end} foi desenvolvido com a linguagem \textit{Java} e o \textit{Spring Framework}. Essa tecnologia possibilitou integrar de forma segura a \textit{API} do \textit{Google Sheets}, garantindo a leitura dos dados necessários para o funcionamento da plataforma e enviando essas informações ao \textit{front-end} de maneira estruturada e confiável. Todo o processo priorizou simplicidade na configuração e facilidade de manutenção, permitindo atender às demandas do projeto com eficiência. O código está disponível no repositório do projeto em \url{https://github.com/Tomaz5556/Horarios-IFNMG-Salinas/tree/main/backend}.
 
 \subsection{Estrutura do Back-end}
 
-A estrutura do back-end está organizada seguindo o padrão arquitetural MVC, o que favorece a separação de responsabilidades, facilita a manutenção e a evolução do sistema. Na Figura \ref{fig_back_1}, destacam-se os principais elementos do projeto:
+A estrutura do \textit{back-end} está organizada seguindo o padrão arquitetural MVC, o que favorece a separação de responsabilidades, facilita a manutenção e a evolução do sistema. Na Figura \ref{fig_back_1}, destacam-se os principais elementos do projeto:
 
 \begin{figure}[htb]
     \centering
@@ -370,18 +370,18 @@ A estrutura do back-end está organizada seguindo o padrão arquitetural MVC, o 
 \end{figure}
 
 \begin{itemize}
-    \item config: pacote para armazenar classes de configuração do sistema, como a EnvConfig.java, que define as variáveis de ambiente, e a WebConfig.java, responsável por ajustes na configuração do Spring Boot, incluindo a definição do CORS. Um mecanismo que define quais origens externas podem se comunicar com a API, permitindo uma integração segura entre o front-end e o back-end, mesmo em domínios diferentes.
-    \item constants: pacote para centralizar valores fixos e listas, contendo as classes CursosConstants.java, LoginConstants.java e ProfessoresSalasConstants.java, que mantêm os dados de cursos, professores, salas e credenciais de login.
-    \item controller: pacote para controlar as requisições recebidas e encaminhá-las para os serviços adequados, abrigando a classe SheetsController.java, que gerencia as rotas da aplicação.
-    \item model: pacote para definir as classes de domínio que representam a estrutura dos dados, como Curso.java e Horarios.java, que servem de modelo para a manipulação das informações obtidas do Google Sheets.
-    \item service: pacote para concentrar as regras de negócio e a comunicação com a API do Google Sheets, incluindo as classes CursosMedioService.java, CursosSuperiorService.java, HorariosService.java, LoginService.java, ProfessoresService.java, SalasService.java, SheetsService.java e ValidacoesService.java.
-    \item HorariosApplication.java: classe principal que executa a aplicação Spring Boot e carrega as configurações do sistema.
+    \item \textbf{config}: pacote para armazenar classes de configuração do sistema, como a \textit{EnvConfig.java}, que define as variáveis de ambiente, e a \textit{WebConfig.java}, responsável por ajustes na configuração do \textit{Spring Boot}, incluindo a definição do CORS. Um mecanismo que define quais origens externas podem se comunicar com a \textit{API}, permitindo uma integração segura entre o \textit{front-end} e o \textit{back-end}, mesmo em domínios diferentes.
+    \item \textbf{constants}: pacote para centralizar valores fixos e listas, contendo as classes \textit{CursosConstants.java}, \textit{LoginConstants.java} e \textit{ProfessoresSalasConstants.java}, que mantêm os dados de cursos, professores, salas e credenciais de login.
+    \item \textbf{controller}: pacote para controlar as requisições recebidas e encaminhá-las para os serviços adequados, abrigando a classe \textit{SheetsController.java}, que gerencia as rotas da aplicação.
+    \item \textbf{model}: pacote para definir as classes de domínio que representam a estrutura dos dados, como \textit{Curso.java} e \textit{Horarios.java}, que servem de modelo para a manipulação das informações obtidas do \textit{Google Sheets}.
+    \item \textbf{service}: pacote para concentrar as regras de negócio e a comunicação com a \textit{API} do \textit{Google Sheets}, incluindo as classes \textit{CursosMedioService.java}, \textit{CursosSuperiorService.java}, \textit{HorariosService.java}, \textit{LoginService.java}, \textit{ProfessoresService.java}, \textit{SalasService.java}, \textit{SheetsService.java} e \textit{ValidacoesService.java}.
+    \item \textbf{HorariosApplication.java}: classe principal que executa a aplicação \textit{Spring Boot} e carrega as configurações do sistema.
 \end{itemize}
 
 \subsection{Funcionalidades do Back-end}
 
 \begin{itemize}
-    \item \textbf{Estabelecer a conexão com a API do Google Sheets}: para coletar os dados das planilhas utilizadas como banco de dados. Essa função é executada pela classe SheetsService, que gerencia a integração entre o back-end e o serviço do Google, possibilitando o acesso dinâmico e estruturado às informações necessárias para o funcionamento da plataforma.
+    \item \textbf{Estabelecer a conexão com a API do Google Sheets}: para coletar os dados das planilhas utilizadas como banco de dados. Essa função é executada pela classe \textit{SheetsService}, que gerencia a integração entre o \textit{back-end} e o serviço do Google, possibilitando o acesso dinâmico e estruturado às informações necessárias para o funcionamento da plataforma.
     
     \begin{figure}[H]
         \centering
@@ -391,24 +391,24 @@ A estrutura do back-end está organizada seguindo o padrão arquitetural MVC, o 
         \label{fig_back_2}
     \end{figure}
     
-    A Figura \ref{fig_back_2} mostra a classe SheetsService.java. A seguir, estão descritas suas principais funcionalidades:
+    A Figura \ref{fig_back_2} mostra a classe \textit{SheetsService.java}. A seguir, estão descritas suas principais funcionalidades:
 
     \begin{itemize}
-        \item \textbf{Constantes}: APPLICATION\_NAME e JSON\_FACTORY são utilizadas para configurar a instância da API do Google Sheets. O nome da aplicação é definido para identificação no console da API, e o JsonFactory especifica o formato de serialização dos dados trafegados entre o back-end e o serviço do Google.
-        \item \textbf{Construtor SheetsService()}: Responsável por configurar a instância do cliente da API do Google Sheets, que é armazenada no atributo sheetsService. Para isso, é utilizada uma conexão segura, criada com GoogleNetHttpTransport, garantindo uma comunicação autenticada e confiável entre o sistema e a API.
-        \item \textbf{Método getSheetValues(String range)}: Realiza a leitura dos dados da planilha principal, onde estão os horários acadêmicos, com base no intervalo informado pelo parâmetro range. O método utiliza duas variáveis de ambiente:
+        \item \textbf{Constantes}: \textit{APPLICATION\_NAME} e \textit{JSON\_FACTORY} são utilizadas para configurar a instância da \textit{API} do \textit{Google Sheets}. O nome da aplicação é definido para identificação no console da \textit{API}, e o \textit{JsonFactory} especifica o formato de serialização dos dados trafegados entre o \textit{back-end} e o serviço do Google.
+        \item \textbf{Construtor SheetsService()}: Responsável por configurar a instância do cliente da \textit{API} do \textit{Google Sheets}, que é armazenada no atributo sheetsService. Para isso, é utilizada uma conexão segura, criada com \textit{GoogleNetHttpTransport}, garantindo uma comunicação autenticada e confiável entre o sistema e a \textit{API}.
+        \item \textbf{Método getSheetValues(String range)}: Realiza a leitura dos dados da planilha principal, onde estão os horários acadêmicos, com base no intervalo informado pelo parâmetro \textit{range}. O método utiliza duas variáveis de ambiente:
         \begin{itemize}
-            \item \textit{EnvConfig.SPREADSHEET\_ID}: ID da planilha com os horários acadêmicos.
-            \item \textit{EnvConfig.API\_KEY}: chave de API do Google Sheets.
+            \item \textbf{EnvConfig.SPREADSHEET\_ID}: \textit{ID} da planilha com os horários acadêmicos.
+            \item \textbf{EnvConfig.API\_KEY}: chave de \textit{API} do \textit{Google Sheets}.
         \end{itemize}
-        \item \textbf{Método getSheetValuesLogin(String range)}: Realiza a leitura dos dados da planilha de login, com base no intervalo informado pelo parâmetro range. Esse método é executado antes do acesso à tela de validação de dados, sendo responsável por autenticar o usuário na tela de login. As variáveis de ambiente utilizadas são:
+        \item \textbf{Método getSheetValuesLogin(String range)}: Realiza a leitura dos dados da planilha de login, com base no intervalo informado pelo parâmetro \textit{range}. Esse método é executado antes do acesso à tela de validação de dados, sendo responsável por autenticar o usuário na tela de login. As variáveis de ambiente utilizadas são:
         \begin{itemize}
-            \item \textit{EnvConfig.SPREADSHEET\_LOGIN}: ID da planilha com as credenciais de login.
-            \item \textit{EnvConfig.API\_KEY}: mesma chave de API do Google Sheets em uso no método anterior.
+            \item \textbf{EnvConfig.SPREADSHEET\_LOGIN}: \textit{ID} da planilha com as credenciais de login.
+            \item \textbf{EnvConfig.API\_KEY}: mesma chave de \textit{API} do \textit{Google Sheets} em uso no método anterior.
         \end{itemize}
     \end{itemize}
 
-    \item \textbf{Disponibilizar endpoints REST}: para consultar horários de cursos, professores, salas e resultados de validação de dados, assegurando respostas padronizadas e consistentes. Essa funcionalidade é implementada na classe SheetsController, que organiza e define as rotas de acesso dos dados. As rotas são definidas exclusivamente com o método GET, uma vez que o sistema realiza apenas operações de leitura, sem modificar os dados. Cada rota é mapeada para um método específico do controller, responsável por retornar as informações de forma estruturada por meio do objeto ResponseEntity. A seguir, são descritos os principais endpoints da aplicação.
+    \item \textbf{Disponibilizar endpoints REST}: para consultar horários de cursos, professores, salas e resultados de validação de dados, assegurando respostas padronizadas e consistentes. Essa funcionalidade é implementada na classe \textit{SheetsController}, que organiza e define as rotas de acesso dos dados. As rotas são definidas exclusivamente com o método \textit{GET}, uma vez que o sistema realiza apenas operações de leitura, sem modificar os dados. Cada rota é mapeada para um método específico do \textit{controller}, responsável por retornar as informações de forma estruturada por meio do objeto \textit{ResponseEntity}. A seguir, são descritos os principais \textit{endpoints} da aplicação.
 
     \begin{figure}[htb]
         \centering
@@ -418,7 +418,7 @@ A estrutura do back-end está organizada seguindo o padrão arquitetural MVC, o 
         \label{fig_back_3}
     \end{figure}
 
-    O objetivo do endpoint apresentado na Figura \ref{fig_back_3} é retornar os horários dos cursos técnicos. O parâmetro utilizado é cursoSelecionado, que é opcional e, por padrão, assume o valor "todos". Tendo isso como referência, o sistema consulta os dados na planilha e os retorna de forma organizada dentro de um objeto Horarios com os horários de todos os cursos técnicos ou de um curso técnico específico.
+    O objetivo do \textit{endpoint} apresentado na Figura \ref{fig_back_3} é retornar os horários dos cursos técnicos. O parâmetro utilizado é \textit{cursoSelecionado}, que é opcional e, por padrão, assume o valor \textit{todos}. Tendo isso como referência, o sistema consulta os dados na planilha e os retorna de forma organizada dentro de um objeto \textit{Horarios} com os horários de todos os cursos técnicos ou de um curso técnico específico.
 
     \begin{figure}[htb]
         \centering
@@ -428,7 +428,7 @@ A estrutura do back-end está organizada seguindo o padrão arquitetural MVC, o 
         \label{fig_back_4}
     \end{figure}
 
-    O objetivo do endpoint apresentado na Figura \ref{fig_back_4} é retornar os horários dos cursos superiores. O parâmetro utilizado é cursoSelecionado, que é opcional e, por padrão, assume o valor "todos". Tendo isso como referência, o sistema consulta os dados na planilha e os retorna de forma organizada dentro de um objeto Horarios com os horários de todos os cursos superiores ou de um curso superior específico.
+    O objetivo do \textit{endpoint} apresentado na Figura \ref{fig_back_4} é retornar os horários dos cursos superiores. O parâmetro utilizado é \textit{cursoSelecionado}, que é opcional e, por padrão, assume o valor \textit{todos}. Tendo isso como referência, o sistema consulta os dados na planilha e os retorna de forma organizada dentro de um objeto \textit{Horarios} com os horários de todos os cursos superiores ou de um curso superior específico.
 
     \begin{figure}[htb]
         \centering
@@ -438,7 +438,7 @@ A estrutura do back-end está organizada seguindo o padrão arquitetural MVC, o 
         \label{fig_back_5}
     \end{figure}
 
-    Conforme ilustrado na Figura \ref{fig_back_5}, o objetivo do endpoint é retornar os horários dos professores. O parâmetro professorSelecionado é opcional e pode ser deixado em branco. Com base nisso, o sistema consulta os dados na planilha e os retorna de forma organizada dentro de um objeto Horarios com os horários de um professor específico.
+    Conforme ilustrado na Figura \ref{fig_back_5}, o objetivo do \textit{endpoint} é retornar os horários dos professores. O parâmetro \textit{professorSelecionado} é opcional e pode ser deixado em branco. Com base nisso, o sistema consulta os dados na planilha e os retorna de forma organizada dentro de um objeto \textit{Horarios} com os horários de um professor específico.
 
     \begin{figure}[htb]
         \centering
@@ -448,7 +448,7 @@ A estrutura do back-end está organizada seguindo o padrão arquitetural MVC, o 
         \label{fig_back_6}
     \end{figure}
 
-    Conforme ilustrado na Figura \ref{fig_back_6}, o objetivo do endpoint é retornar os horários de ocupação das salas. O parâmetro salaSelecionada é opcional e pode ser deixado em branco. Com base nisso, o sistema consulta os dados na planilha e os retorna de forma organizada dentro de um objeto Horarios com os horários de ocupação de uma sala específica.
+    Conforme ilustrado na Figura \ref{fig_back_6}, o objetivo do \textit{endpoint} é retornar os horários de ocupação das salas. O parâmetro \textit{salaSelecionada} é opcional e pode ser deixado em branco. Com base nisso, o sistema consulta os dados na planilha e os retorna de forma organizada dentro de um objeto \textit{Horarios} com os horários de ocupação de uma sala específica.
 
     \begin{figure}[H]
         \centering
@@ -458,7 +458,7 @@ A estrutura do back-end está organizada seguindo o padrão arquitetural MVC, o 
         \label{fig_back_7}
     \end{figure}
 
-    Como mostrado na Figura \ref{fig_back_7}, o objetivo do endpoint é validar as credenciais de acesso informadas. Os parâmetros obrigatórios são usuario e senha. Com essas informações, o sistema realiza a autenticação e retorna uma mensagem com o status correspondente, sendo 200 em caso de sucesso ou 401 não autorizado caso as credenciais estejam incorretas.
+    Como mostrado na Figura \ref{fig_back_7}, o objetivo do \textit{endpoint} é validar as credenciais de acesso informadas. Os parâmetros obrigatórios são \textit{usuario} e \textit{senha}. Com essas informações, o sistema realiza a autenticação e retorna uma mensagem com o status correspondente, sendo 200 em caso de sucesso ou 401 não autorizado caso as credenciais estejam incorretas.
 
     \begin{figure}[htb]
         \centering
@@ -468,12 +468,12 @@ A estrutura do back-end está organizada seguindo o padrão arquitetural MVC, o 
         \label{fig_back_8}
     \end{figure}
 
-    Conforme mostrado na Figura \ref{fig_back_8}, o objetivo do endpoint é retornar os resultados da validação dos dados da planilha de horários. Nenhum parâmetro é necessário para a execução da requisição. Ao ser acionado, o sistema analisa a planilha e responde com um objeto Horarios contendo eventuais inconsistências ou erros detectados durante o processo de validação.
+    Conforme mostrado na Figura \ref{fig_back_8}, o objetivo do \textit{endpoint} é retornar os resultados da validação dos dados da planilha de horários. Nenhum parâmetro é necessário para a execução da requisição. Ao ser acionado, o sistema analisa a planilha e responde com um objeto \textit{Horarios} contendo eventuais inconsistências ou erros detectados durante o processo de validação.
 \end{itemize}
 
 \section{Deploy}
 
-O front-end foi hospedado na plataforma Vercel, permitindo a disponibilização da interface do usuário com alta performance e integração contínua, como apresentado na Figura \ref{fig_deploy_1}.
+O \textit{front-end} foi hospedado na plataforma \textit{Vercel}, permitindo a disponibilização da interface do usuário com alta performance e integração contínua, como apresentado na Figura \ref{fig_deploy_1}.
 
 \begin{figure}[H]
     \centering
@@ -483,7 +483,7 @@ O front-end foi hospedado na plataforma Vercel, permitindo a disponibilização 
     \label{fig_deploy_1}
 \end{figure}
 
-Já o back-end foi hospedado na plataforma Koyeb, responsável por executar a API que processa e envia os dados do Google Sheets ao front-end, conforme apresentado na Figura \ref{fig_deploy_2}.
+Já o \textit{back-end} foi hospedado na plataforma \textit{Koyeb}, responsável por executar a \textit{API} que processa e envia os dados do \textit{Google Sheets} ao \textit{front-end}, conforme apresentado na Figura \ref{fig_deploy_2}.
 
 \begin{figure}[htb]
     \centering
