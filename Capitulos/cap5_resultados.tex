@@ -288,9 +288,9 @@ A estrutura do \textit{front-end} está organizada de forma modular, visando cla
         \item Verificar a presença da guia \textit{Horário - Ensino Médio} que contém os horários das turmas dos cursos técnicos.
         \item Verificar a presença da guia \textit{Horário - Graduação} que contém os horários das turmas dos cursos superiores.
         \item Verificar a presença da guia \textit{Validação de Dados} que reúne a lista de professores da instituição.
-        \item Validar se o intervalo B2:V76 está presente na guia \textit{Horário - Ensino Médio}.
-        \item Validar se o intervalo B2:AW106 está presente na guia \textit{Horário - Graduação}.
-        \item Validar se o intervalo A2:A está presente na guia \textit{Validação de Dados}.
+        \item Validar se o intervalo de células B2:V76 está presente na guia \textit{Horário - Ensino Médio}.
+        \item Validar se o intervalo de células B2:AW106 está presente na guia \textit{Horário - Graduação}.
+        \item Validar se o intervalo de células A2:A está presente na guia \textit{Validação de Dados}.
         \item Avaliar a formatação das células, verificando se contêm os parênteses exigidos e se os nomes das turmas não apresentam parênteses. Se forem encontradas inconsistências, a tela exibe as células problemáticas, informando a guia, coluna e linha correspondentes.
     \end{enumerate}
 
@@ -306,7 +306,7 @@ A estrutura do \textit{front-end} está organizada de forma modular, visando cla
 
     \begin{figure}[H]
         \centering
-        \caption{Tela de validação com resultado apontando inconsistências}
+        \caption{Tela de validação com resultado mostrando inconsistências}
         \includegraphics[width=1\textwidth]{Figuras/front-23.png}
         \caption*{Fonte: Elaborado pelo autor (2025)}
         \label{fig_front_23}
@@ -424,7 +424,7 @@ A estrutura do \textit{back-end} está organizada seguindo o padrão arquitetura
         \end{itemize}
     \end{itemize}
 
-    \item \textbf{Disponibilizar endpoints REST}: para consultar horários de cursos, professores, salas e resultados de validação de dados, assegurando respostas padronizadas e consistentes. Essa funcionalidade é implementada na classe \textit{SheetsController}, que organiza e define as rotas de acesso dos dados. As rotas são definidas exclusivamente com o método \textit{GET}, uma vez que o sistema realiza apenas operações de leitura, sem modificar os dados. Cada rota é mapeada para um método específico do \textit{controller}, responsável por retornar as informações de forma estruturada por meio do objeto \textit{ResponseEntity}. A seguir, são descritos os principais \textit{endpoints} da aplicação.
+    \item \textbf{Disponibilizar endpoints REST}: para consultar horários de cursos, professores, salas e resultados de validação de dados, assegurando respostas padronizadas e consistentes. Essa funcionalidade é implementada na classe \textit{SheetsController}, que organiza e define as rotas de acesso dos dados. As rotas são definidas exclusivamente com o método GET, uma vez que o sistema realiza apenas operações de leitura, sem modificar os dados. Cada rota é mapeada para um método específico do \textit{controller}, responsável por retornar as informações de forma estruturada por meio do objeto \textit{ResponseEntity}. A seguir, são descritos os principais \textit{endpoints} da aplicação.
 
     \begin{figure}[htb]
         \centering
