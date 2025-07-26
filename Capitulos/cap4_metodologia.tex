@@ -85,17 +85,17 @@ A condução da entrevista para o levantamento de requisitos foi realizada confo
     \item \textbf{Justificativa de uso da stack do back-end}: Optou-se pela linguagem \textit{Java} com o \textit{Spring Framework} por fornecer uma base estável para criar aplicações seguras e escaláveis. O \textit{Spring Boot} foi adotado para agilizar a configuração e o desenvolvimento, evitando ajustes manuais desnecessários. O \textit{Google Sheets} foi utilizado como banco de dados devido à integração simples e ao suporte adequado às necessidades do projeto, com acesso realizado por meio da \textit{Google Sheets API}, garantindo a leitura estruturada e segura dos dados. Para assegurar portabilidade e isolamento do ambiente, aplicou-se a conteinerização com \textit{Docker}, facilitando o deploy em diferentes ambientes.
 \end{itemize}
 
-\subsection{Integração Front-end com Back-end}
+\section{Integração Front-end com Back-end}
 
 A integração foi realizada por meio de uma \textit{API RESTful} desenvolvida com \textit{Spring Boot}, que atuou como intermediária entre a interface construída em \textit{Next.js} e os dados armazenados no \textit{Google Sheets}. O \textit{front-end} envia requisições HTTP ao \textit{back-end} para acessar informações como horários de cursos, turmas, professores e salas. Essas solicitações são processadas pelo \textit{back-end}, que recuperava os dados por meio da \textit{Google Sheets API} e os retornava no formato \textit{JSON}. Dessa forma, as informações são exibidas na interface de maneira clara, organizada e dinâmica.
 
 Alterações feitas diretamente no \textit{Google Sheets} aparecem automaticamente na plataforma, pois a \textit{API} acessou os dados atualizados da planilha. Assim, eliminou-se a necessidade de atualizações manuais ou processos de sincronização, otimizando a experiência do usuário final. O \textit{back-end} foi implementado com mecanismos de controle de acesso, garantindo a segurança e preservando a integridade das informações. A integração promovida conectou as diferentes partes do sistema de maneira eficiente, promovendo uma experiência confiável e responsiva.
 
-\subsection{Deploy}
+\section{Deploy}
 
 Para disponibilizar o sistema na internet, o \textit{front-end} foi implementado em uma conta particular na \textit{Vercel}\footnote{https://vercel.com/docs}, uma plataforma especializada no deploy de aplicações web baseadas em \textit{JavaScript}, como o \textit{Next.js}, que oferece uma integração direta e otimizada para esse tipo de aplicação. O \textit{back-end}, por sua vez, foi hospedado em uma conta privada na \textit{Koyeb}\footnote{https://www.koyeb.com/docs}, uma plataforma serverless amigável para desenvolvedores, projetada para permitir que empresas implantem aplicativos confiáveis e escaláveis globalmente.
 
-\subsection{Armazenamento do Código e Integração}
+\section{Armazenamento do Código e Integração}
 
 Para a hospedagem do código, foi utilizado o \textit{GitHub}\footnote{https://github.com/}, um repositório de hospedagem de serviços \textit{Git}. Podendo ser considerado como uma rede social para desenvolvedores, além de uma plataforma colaborativa. Ao utilizá-lo, os programadores podem interagir e colaborar em repositórios de código aberto, permitindo que realizem downloads, cooperem, compartilhem, além de outras funcionalidades \cite{silva2024biblioteca}.
 
