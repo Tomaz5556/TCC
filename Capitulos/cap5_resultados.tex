@@ -131,7 +131,7 @@ A Figura \ref{fig_front_5} mostra a tela dos professores com nenhum professor se
     \label{fig_front_8}
 \end{figure}
 
-A Figura \ref{fig_front_7} mostra a tela das salas com nenhuma sala selecionada e a Figura \ref{fig_front_8} exibe uma sala selecionada com seus horários semanais.
+A Figura \ref{fig_front_7} mostra a tela das salas com nenhuma sala selecionada e a Figura \ref{fig_front_8} exibe uma sala selecionada com seus horários de ocupação semanais.
 
 \begin{figure}[htb]
     \centering
@@ -149,7 +149,7 @@ A Figura \ref{fig_front_7} mostra a tela das salas com nenhuma sala selecionada 
     \label{fig_front_10}
 \end{figure}
 
-Já a Figura \ref{fig_front_9} mostra a tela de login para acessar a tela de validação de dados, e a Figura \ref{fig_front_10} exibe a tela de validação de dados com critérios e os resultados obtidos a partir da planilha.
+Já a Figura \ref{fig_front_9} mostra a tela de login para acessar a tela de validação de dados, e a Figura \ref{fig_front_10} exibe a tela de validação de dados com critérios e os resultados que podem ser obtidos a partir da planilha.
 
 \begin{figure}[htb]
     \centering
@@ -193,20 +193,20 @@ A estrutura do \textit{front-end} está organizada de forma modular, visando cla
     \item \textbf{api}: pasta responsável por buscar dados da planilha por meio de requisições, contando com o arquivo \textit{routes.ts}, que gerencia essas chamadas e contém a variável de ambiente para comunicação com o \textit{back-end}.
     \item components: pasta que centraliza os componentes do sistema, subdividida em:
     \begin{itemize}
-        \item \textbf{auth}: pasta responsável pelo controle de autenticação, incluindo o arquivo \textit{LoginValidacao.tsx}, que verifica as credenciais de login antes de entrar na tela de validação.
+        \item \textbf{auth}: pasta responsável pelo controle de autenticação, incluindo o componente \textit{LoginValidacao.tsx}, que verifica as credenciais de login antes de entrar na tela de validação.
         \item \textbf{common}: pasta destinada a componentes reutilizáveis, contendo:
         \begin{itemize}
             \item \textbf{buttons}: reúne botões de ação como \textit{BackButton.tsx} para retorno, \textit{DownloadButton.tsx} para download de tabelas e \textit{SearchButton.tsx} para busca de horários.
-             \item \textbf{dropdowns}: responsável pelas listas suspensas, como o arquivo \textit{DropdownList.tsx}, utilizado para seleção de cursos, professores ou salas.
+             \item \textbf{dropdowns}: responsável pelas listas suspensas, como o componente \textit{DropdownList.tsx}, utilizado para seleção de cursos, professores ou salas.
         \end{itemize}
         \item \textbf{schedules}: pasta com componentes independentes para exibição de horários organizados por tipo de consulta, como \textit{HorariosCursos.tsx}, \textit{HorariosProfessores.tsx} e \textit{HorariosSalas.tsx}, que apresentam uma lista suspensa para seleção e uma tabela com os horários correspondentes, e \textit{ValidacaoDados.tsx}, que exibe a tabela com os resultados da validação da planilha dos horários.
         \item \textbf{tables}: pasta com componentes independentes das tabelas com os dados, incluindo \textit{TabelaCursos.tsx}, \textit{TabelaProfessores.tsx}, \textit{TabelaSalas.tsx} e \textit{TabelaValidacao.tsx}.
     \end{itemize}
     \item \textbf{constants}: pasta responsável por definir as listas de cursos e salas disponíveis, armazenadas nos arquivos \textit{cursos.ts} e \textit{salas.ts}.
-    \item \textbf{pages}: organiza as rotas da aplicação, com páginas específicas para cursos, professores, salas, login e validação.
+    \item \textbf{pages}: pasta que organiza as rotas da aplicação, com páginas específicas para cursos, professores, salas, login e validação.
     \item \textbf{globals.css}: arquivo de estilos globais aplicados em toda a interface.
-    \item \textbf{layout.tsx}: define a estrutura geral de layout e permite a edição de metadados de forma centralizada.
-    \item \textbf{page.tsx}: página inicial que exibe o menu principal com opções de botões de horários e outros serviços.
+    \item \textbf{layout.tsx}: componente que define a estrutura geral de layout e permite a edição de metadados de forma centralizada.
+    \item \textbf{page.tsx}: componente com página inicial que exibe o menu principal com opções de botões de horários e outros serviços.
     \item \textbf{public}: pasta com imagens do logotipo institucional do IFNMG Campus Salinas, disponibilizadas tanto na versão padrão quanto na versão em preto e branco.
 \end{itemize}
 
@@ -434,7 +434,7 @@ A estrutura do \textit{back-end} está organizada seguindo o padrão arquitetura
         \label{fig_back_3}
     \end{figure}
 
-    O objetivo do \textit{endpoint} apresentado na Figura \ref{fig_back_3} é retornar os horários dos cursos técnicos. O parâmetro utilizado é \textit{cursoSelecionado}, que é opcional e, por padrão, assume o valor \textit{todos}. Tendo isso como referência, o sistema consulta os dados na planilha e os retorna de forma organizada dentro de um objeto \textit{Horarios} com os horários de todos os cursos técnicos ou de um curso técnico específico.
+    O objetivo do \textit{endpoint} apresentado na Figura \ref{fig_back_3} é retornar os horários dos cursos técnicos. O parâmetro utilizado é \textit{cursoSelecionado}, que é opcional e por padrão assume o valor \textit{todos}. Tendo isso como referência, o sistema consulta os dados na planilha e os retorna de forma organizada dentro de um objeto \textit{Horarios} com os horários de todos os cursos técnicos ou de um curso técnico específico.
 
     \begin{figure}[htb]
         \centering
@@ -444,7 +444,7 @@ A estrutura do \textit{back-end} está organizada seguindo o padrão arquitetura
         \label{fig_back_4}
     \end{figure}
 
-    O objetivo do \textit{endpoint} apresentado na Figura \ref{fig_back_4} é retornar os horários dos cursos superiores. O parâmetro utilizado é \textit{cursoSelecionado}, que é opcional e, por padrão, assume o valor \textit{todos}. Tendo isso como referência, o sistema consulta os dados na planilha e os retorna de forma organizada dentro de um objeto \textit{Horarios} com os horários de todos os cursos superiores ou de um curso superior específico.
+    O objetivo do \textit{endpoint} apresentado na Figura \ref{fig_back_4} é retornar os horários dos cursos superiores. O parâmetro utilizado é \textit{cursoSelecionado}, que é opcional e por padrão assume o valor \textit{todos}. Tendo isso como referência, o sistema consulta os dados na planilha e os retorna de forma organizada dentro de um objeto \textit{Horarios} com os horários de todos os cursos superiores ou de um curso superior específico.
 
     \begin{figure}[htb]
         \centering
@@ -474,7 +474,7 @@ A estrutura do \textit{back-end} está organizada seguindo o padrão arquitetura
         \label{fig_back_7}
     \end{figure}
 
-    Como mostrado na Figura \ref{fig_back_7}, o objetivo do \textit{endpoint} é validar as credenciais de acesso informadas. Os parâmetros obrigatórios são \textit{usuario} e \textit{senha}. Com essas informações, o sistema realiza a autenticação e retorna uma mensagem com o status correspondente, sendo 200 em caso de sucesso ou 401 não autorizado caso as credenciais estejam incorretas.
+    Como mostrado na Figura \ref{fig_back_7}, o objetivo do \textit{endpoint} é validar as credenciais de acesso informadas. Os parâmetros obrigatórios são \textit{usuario} e \textit{senha}. Com essas informações, o sistema realiza a autenticação e retorna uma mensagem com o código de estado HTTP correspondente, sendo 200 (OK) em caso de sucesso ou 401 (Unauthorized) quando as credenciais estão incorretas.
 
     \begin{figure}[htb]
         \centering
