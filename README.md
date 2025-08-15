@@ -3,6 +3,7 @@ Erros:
 - Registro Detalhado (pg33,pg39)
 - de uso da stack (eliminar) (pg36,pg37)
 - Justificativa de uso da stack do front-end (pg36)
+- como horários de cursos, turmas, professores e salas (acadêmicas) (pg37)
 - Garantia de Disponibilidade: (pg40)
 - de cursos, professores, salas (acadêmicos) (pg66)
 - planiha (pg68)
