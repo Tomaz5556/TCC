@@ -424,7 +424,7 @@ A estrutura do \textit{back-end} está organizada seguindo o padrão arquitetura
         \end{itemize}
     \end{itemize}
 
-    \item \textbf{Disponibilizar endpoints REST}: para consultar horários de cursos, professores, salas e resultados de validação de dados, assegurando respostas padronizadas e consistentes. Essa funcionalidade é implementada na classe \textit{SheetsController}, que organiza e define as rotas de acesso dos dados. As rotas são definidas exclusivamente com o método GET, uma vez que o sistema realiza apenas operações de leitura, sem modificar os dados. Cada rota é mapeada para um método específico do \textit{controller}, responsável por retornar as informações de forma estruturada por meio do objeto \textit{ResponseEntity}. A seguir, são descritos os principais \textit{endpoints} da aplicação.
+    \item \textbf{Disponibilizar endpoints REST}: para consultar horários acadêmicos e resultados de validação de dados, assegurando respostas padronizadas e consistentes. Essa funcionalidade é implementada na classe \textit{SheetsController}, que organiza e define as rotas de acesso dos dados. As rotas são definidas exclusivamente com o método GET, uma vez que o sistema realiza apenas operações de leitura, sem modificar os dados. Cada rota é mapeada para um método específico do \textit{controller}, responsável por retornar as informações de forma estruturada por meio do objeto \textit{ResponseEntity}. A seguir, são descritos os principais \textit{endpoints} da aplicação.
 
     \begin{figure}[htb]
         \centering
@@ -468,7 +468,7 @@ A estrutura do \textit{back-end} está organizada seguindo o padrão arquitetura
 
     \begin{figure}[H]
         \centering
-        \caption{Endpoint de consulta das permissões para visualizar validação da planiha}
+        \caption{Endpoint de consulta das permissões para visualizar validação da planilha}
         \includegraphics[width=0.9\textwidth]{Figuras/back-7.png}
         \caption*{Fonte: Elaborado pelo autor (2025)}
         \label{fig_back_7}
@@ -511,7 +511,7 @@ Já o \textit{back-end} foi hospedado na plataforma \textit{Koyeb}, responsável
 
 \section{Documentação}
 
-As Figuras \ref{fig_doc_1}, \ref{fig_doc_2} e \ref{fig_doc_3} apresentam a documentação técnica elaborada para a planilha utilizada como banco de dados do sistema. A documentação está disponível no seguinte endereço: \url{https://ifnmgsal-inf.github.io/Horarios-IFNMG-Salinas}. Esse material descreve, de forma clara e objetiva, as instruções para atualização do identificador da planilha, as regras de preenchimento dos dados, bem como os padrões de nomes e intervalos de células necessários para garantir a integridade do funcionamento da plataforma.
+As Figuras \ref{fig_doc_1}, \ref{fig_doc_2}, \ref{fig_doc_3} e \ref{fig_doc_4} apresentam a documentação técnica elaborada para a planilha utilizada como banco de dados do sistema. A documentação está disponível no seguinte endereço: \url{https://ifnmgsal-inf.github.io/Horarios-IFNMG-Salinas}. Esse material descreve, de forma clara e objetiva, as instruções para atualização do identificador da planilha, as regras de preenchimento dos dados, bem como os padrões de nomes e intervalos de células necessários para garantir a integridade do funcionamento da plataforma.
 
 \begin{figure}[htb]
     \centering
